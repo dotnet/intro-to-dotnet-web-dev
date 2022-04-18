@@ -1,0 +1,61 @@
+﻿@inject GameState State
+
+<nav>
+	<span @onclick="() => PlayPiece(0)">🔽</span>
+	<span @onclick="() => PlayPiece(1)">🔽</span>
+	<span @onclick="() => PlayPiece(2)">🔽</span>
+	<span @onclick="() => PlayPiece(3)">🔽</span>
+	<span @onclick="() => PlayPiece(4)">🔽</span>
+	<span @onclick="() => PlayPiece(5)">🔽</span>
+	<span @onclick="() => PlayPiece(6)">🔽</span>
+</nav>
+
+<div>
+
+
+<div class="board">
+
+		@for (var i=0;i<42;i++) {
+			<span class="container"><span></span></span>
+		}
+		
+	
+</div>
+
+	@for (var i=0; i<42; i++)
+	{
+		<span class="@PieceClasses[i]"></span>
+	}
+
+
+</div>
+@code {
+
+	private byte CurrentTurn = 0;
+
+	private string[] PieceClasses = new string[42];
+
+	protected override void OnInitialized()
+	{
+
+		State.ResetBoard();
+
+		base.OnInitialized();
+
+	}
+
+	private void PlayPiece(int i)
+	{
+
+		Console.WriteLine("Playing piece");
+		var col = (byte)(i % 7 + 1);
+		var cssClass = $"player{State.PlayerTurn} col{col}";
+		var landingSpot = State.PlayPiece(col);
+		cssClass += $" drop{State.ConvertLandingSpotToRow(landingSpot)+1}";
+		PieceClasses[CurrentTurn] = cssClass;
+		CurrentTurn++;
+		Console.WriteLine($"Move #{CurrentTurn} - Class: {cssClass}");
+
+	}
+
+}
