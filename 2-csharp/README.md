@@ -83,14 +83,14 @@ In this example, we use parentheses pass a string as a parameter to *Console.Wri
 
 ## Boolean expressions
   We use booleans to compare two or more things.
-    | symbol | what it does |
-    | --- | ------ |
-    | < | less than |
-    | > | greater than |
-    | <= | less than or equal |
-    | >= | greater than or equal |
-    | == | equal |
-    | != | not equal |
+  | symbol | what it does |
+  | --- | ---------- |
+  | < | less than |
+  | > | greater than |
+  | <= | less than or equal |
+  | >= | greater than or equal |
+  | == | equal |
+  | != | not equal |
    
 ---
 
