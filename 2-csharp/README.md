@@ -51,22 +51,25 @@ In this example, we use parentheses pass a string as a parameter to *Console.Wri
   
   Variable names can contain alphanumeric characters and underscores, but no special characters. They also cannot be keywords.
 
-## Syntax cheat sheet
-1. Every statement is ended by a semicolon
+# Syntax cheat sheet
+## Semicolons
+  Every statement is ended by a semicolon
    ```csharp
    Console.WriteLine("there is a ';' at the end of this statement");
    ```
-1. You can make comments by using 2 slashes
+## Comments
+  You can make comments by using 2 slashes
    ```csharp
    // this is a comment is C#
    ```
-1. C# is case sensitive! For example, a variable "cat" is completely different from a variable "CAT".
+## Case sensitive
+  C# is case sensitive! For example, a variable "cat" is completely different from a variable "CAT".
     ```csharp
     var cat = "meow";
     var CAT = "rawr";
     ```
 
-1. Arithmetic operators 
+## Arithmetic Operators
    These are probably familiar to you!
    | symbol | what it does |
    | --- | ------ |
@@ -78,7 +81,7 @@ In this example, we use parentheses pass a string as a parameter to *Console.Wri
    | ++ | increment |
    | -- | decrement |
 
-2. Boolean expressions
+## Boolean expressions
   We use booleans to compare two or more things.
     | symbol | what it does |
     | --- | ------ |
@@ -91,11 +94,12 @@ In this example, we use parentheses pass a string as a parameter to *Console.Wri
    
 ---
 
-# OOP
+# Object Oriented Programming
 C# is an object-oriented language. 
 Objects are defined by **Classes**. In other words, an **Object** is an instance of a class.
 One way to think about this is that a class is like the blue prints for a house. The actual house that is built is an objects because it is an instance of this blue print.
 
+## Properties and methods
 Objects inherently have attributes. In C# we call these **properties**. The attributes of a house may be the number of doors, what color the house is painted, etc.
 
 We can also define **methods** which describe what an object can do. For example, you can sell your house. 
@@ -117,6 +121,7 @@ public class House
     }
 }
 ```
+## Constructor
 We can define a **constructor** to allow us to create new House objects. 
 
 ```csharp
@@ -140,9 +145,9 @@ Each of these mini challenges is designed so that you can apply C# concepts to m
 | # | Challenge  | Solution   | Duration   | What you will learn | More information |
 |-| ------------------------------- | ------------------------------- | ----------- |  -------------------------------------- | - |
 1 | [Hello World](https://docs.microsoft.com/learn/modules/csharp-write-first/2-exercise-hello-world/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.languages.csharp-first-steps)| N/A | 3 min |  case sensitive, strings, comments | [Intro to C# Tutorial](https://docs.microsoft.com/dotnet/csharp/tour-of-csharp/tutorials/hello-world?WT.mc_id=csharpnotebook-35129-website), [C# documentation](https://docs.microsoft.com/dotnet/csharp/) |
-2 | [Variables](https://docs.microsoft.com/learn/modules/csharp-literals-variables/6-challenge )|[Solution](https://docs.microsoft.com/learn/modules/csharp-literals-variables/7-solution)| 5 min |  variables, data types, strings, ints, decimals | [Numberic Types](https://docs.microsoft.com/dotnet/csharp/tour-of-csharp/tutorials/numbers-in-csharp?WT.mc_id=csharpnotebook-35129-website), [C# documentation](https://docs.microsoft.com/dotnet/csharp/) |
-3 | [Operating on Numbers](https://docs.microsoft.com/learn/modules/csharp-basic-operations/5-challenge)|[Solution](https://docs.microsoft.com/learn/modules/csharp-basic-operations/6-solution)| 2 min |  ints, decimals | [Link](...) |
-4 | [Challenge](...)|[Solution](...)| 5 min |  topics | [Link](...) |
+2 | [Variables](https://docs.microsoft.com/learn/modules/csharp-literals-variables/6-challenge )|[Solution](https://docs.microsoft.com/learn/modules/csharp-literals-variables/7-solution)| 5 min |  variables, data types, strings, ints, decimals | [String formatting tutorial](https://docs.microsoft.com/learn/modules/csharp-basic-formatting/), [C# documentation](https://docs.microsoft.com/dotnet/csharp/) |
+3 | [Operating on numbers](https://docs.microsoft.com/learn/modules/csharp-basic-operations/5-challenge)|[Solution](https://docs.microsoft.com/learn/modules/csharp-basic-operations/6-solution)| 2 min |  ints, decimals | [Number operations tutorial](https://docs.microsoft.com/learn/modules/csharp-basic-operations/), [C# documentation](https://docs.microsoft.com/dotnet/csharp/) |
+4 | [Making clean code](https://docs.microsoft.com/learn/modules/csharp-readable-code/5-challenge)|[Solution](https://docs.microsoft.com/learn/modules/csharp-readable-code/6-solution)| 5 min |  topics | [C# coding conventions](https://docs.microsoft.com/dotnet/csharp/fundamentals/coding-style/coding-conventions) | [C# documentation](https://docs.microsoft.com/dotnet/csharp/) |
 
 
 # Bonus and more ways to connect
