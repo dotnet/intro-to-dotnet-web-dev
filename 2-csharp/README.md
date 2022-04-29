@@ -4,6 +4,7 @@ In this C# Crash Course, we'll go over the basics of C# so that you'll be ready 
 
 ## Topics you'll learn
 * Language attributes
+  * Strongly typed
   * Compiled languages
 * Syntax basics
   * Keywords
@@ -20,10 +21,36 @@ In this C# Crash Course, we'll go over the basics of C# so that you'll be ready 
   * Properties
   * Methods
 
-## Let's get into it!
-blah blah blah
+# Let's get into it!
+## Language Attributes
+C# is a strongly typed, compiled, object oriented language. Let's break this down.
+* In a **strongly typed** language, every variable has a defined type. Every method declaration specifies a name, the type and kind for each input parameter and for the return value.
+* A **compiler** converts the code you write into a format that your computer can understand.After you write C# and build it, the C# compiler (called Roslyn) will analyze your code to check for any errors.
 
-## Mini Challenges!
+## Syntax Basics
+Here's a piece of code that will print "Hello world!" to the console.
+
+```csharp
+using System;
+
+Console.WriteLine("Hello world!");
+```
+### Keywords
+With C#, you use **keywords** like *using* and *Console*.
+>Keywords are predefined, reserved identifiers that have special meanings to the compiler.
+
+### Accessing methods
+The Dot in *Console.WriteLine* allows us to access methods and properties. In this example, **Console** is a type that represents the console window. **WriteLine** is a method of the Console type that prints a line of text to that text console.
+
+### Parameters
+
+
+...
+## OOP
+C# is an object-oriented language. You define types and their behavior.
+...
+
+# Mini Challenges!
 Each of these mini challenges is designed so that you can apply C# concepts to mini coding exercises. These challenges are all sourced from Microsoft documentation and will allow you to get coding inside your browser. Easy peasy!
 
 | # | Challenge  | Solution   | Duration   | What you will learn | More information |
@@ -33,7 +60,7 @@ Each of these mini challenges is designed so that you can apply C# concepts to m
 3 | [Challenge](...)|[Solution](...)| 5 min |  topics | [Link](...) |
 
 
-## Bonus and more ways to connect
+# Bonus and more ways to connect
 
 Want more practice with C#? The .NET team has you covered. Here's a few learning resources:
 * C# Video Series on [Microsoft Docs](https://docs.microsoft.com/shows/CSharp-101/?WT.mc_id=dotnet-35129-website) or [YouTube](https://www.youtube.com/watch?v=Z5JS36NlJiU)
