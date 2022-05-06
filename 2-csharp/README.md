@@ -1,6 +1,6 @@
 # C# Crash Course
 
-In this C# Crash Course, we'll go over the basics of C# so that you'll be ready to build out exciting web apps in emails 3, 4, and 5! We'll start by going through the key attributes of C#, syntax basics, and introduce you to OOP. In each section, we'll link you to some quick in-browser C# challenges so you can apply these concepts.
+In this C# Crash Course, we'll go over the basics of C# so that you'll be ready to build out exciting web apps! We'll start by going through the key attributes of C#, syntax basics, and introduce you to OOP. In each section, we'll link you to some quick in-browser C# challenges so you can apply these concepts.
 
 ## Topics you'll learn
 * Language attributes
@@ -20,7 +20,7 @@ C# is a strongly typed, compiled, object oriented language. Let's break this dow
   * bool, True
 
 ## Compiler 
-  A **compiler** converts the code you write into a format that your computer can understand.After you write C# and build it, the C# compiler (called Roslyn) will analyze your code to check for any errors.
+A **compiler** converts the code you write into a format that your computer can understand. After you write C# and build it, the C# compiler (called Roslyn) will analyze your code to check for any errors.
 
 ---
 
@@ -37,19 +37,19 @@ With C#, you use **keywords** like *using* and *Console*.
 **Keywords** are predefined, reserved identifiers that have special meanings to the compiler.
 
 ## Accessing methods
-The Dot in *Console.WriteLine* allows us to access methods and properties. In this example, **Console** is a type that represents the console window. **WriteLine** is a method of the Console type that prints a line of text to that text console.
+The `. (DOT)` in *Console.WriteLine* allows us to access methods and properties. In this example, **Console** is a type that represents the console window. **WriteLine** is a method of the Console type that prints a line of text to that text console.
 
 ## Parameters
 In this example, we use parentheses pass a string as a parameter to *Console.WriteLine*. 
 
 ## Variables
-  In C#, **variables** allow you to temporarily store a value in memory. In C#, you must declare a vaiable before using it. 
+In C#, **variables** allow you to temporarily store a value in memory. In C#, you must declare a variable before using it. 
   ```csharp
   var cSharp = "really cool";
   ```
-  In this example, we created a string called *cSharp*. You can use the var keyword to declare local variables without explicitly giving them a type.
+In this example, we created a string called `cSharp`. You can use the var keyword to declare local variables without explicitly giving them a type.
   
-  Variable names can contain alphanumeric characters and underscores, but no special characters. They also cannot be keywords.
+Variable names can contain alphanumeric characters and underscores, but no special characters. They also cannot be keywords.
 
 # Syntax cheat sheet
 ## Semicolons
