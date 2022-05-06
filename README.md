@@ -1,6 +1,8 @@
 ## Intro to Web Development with .NET
 
-// coming soon
+Welcome to the Intro to Web Development with .NET GitHub repository!
+
+Here, you'll find all of the projects and challenges associated with each email in the email series. Each email will have a dedicated folder containing all the relevant information. 
 
 
 ## .NET Foundation
