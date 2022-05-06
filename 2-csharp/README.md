@@ -110,9 +110,9 @@ In C#, you can build applications that employ decision-making logic so that your
 
 If there are multiple condition, you can utilize the `else if` and `else` statements. Basically, if the `if` statement fails, these other statements allow you to test against other conditions.
 You can imagine this in the context of a rock⛰️-paper📃-scissors✂️ game. Imagine you chose rock⛰️. 
-`if` your opponent chooses scissors✂️, then you will win
-`else if` your opponent also chooses rock⛰️, then you will tie
-`else` your opponent chooses paper📃, then you will lose
+* `if` your opponent chooses scissors✂️, then you will win
+* `else if` your opponent also chooses rock⛰️, then you will tie
+* `else` your opponent chooses paper📃, then you will lose
 
 Each possible decision your opponent could make leads to a different outcome.
 
