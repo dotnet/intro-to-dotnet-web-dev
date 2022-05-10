@@ -19,7 +19,7 @@
 1. Done ✔️
 
 ## Want more help?
-If you want more detailed installation instructions, check out the Microsof Documentation.
+If you want more detailed installation instructions, check out the Microsoft Documentation.
 * If you're on Windows, go to [Install Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2022)
 * If you're on Mac, go to [Install Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019) 
 
