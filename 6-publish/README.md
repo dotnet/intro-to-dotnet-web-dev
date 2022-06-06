@@ -15,6 +15,7 @@ You can learn more in the [Azure App Service overview documentation](https://doc
    ![Start free button](images/azure-start-free.png)
 3. Sign in to your Microsoft account if your are not already signed in.
 4. Agree to the customer agreement
+
    ![Customer agreement](images/azure-customer-agreement.png)
 5. You will then be asked to provide a credit or debit card. This will make a temporary authorization on your card, but you won’t be charged unless you move to pay-as-you-go pricing.
 6. Click sign up and you're ready to publish your application!
