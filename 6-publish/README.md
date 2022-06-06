@@ -45,9 +45,12 @@ You can also find these instructions in the [Azure documentation](https://docs.m
     | Hosting Plan | *MyFirstAzureWebAppPlan* | Name of the App Service Plan |
     | Location | Select the default | The datacenter where the app is hosted |
     | Size | *Free* | Pricing tier |
+    
     This will look like the below.
+    
     ![Hosting Plan](images/hosting-plan.png)
 11. Select **Create** to create the Azure resources. Once the wizard completes, the Azure resources are created for you and you're ready to publish your ASP.NET Core project.
+
     ![Create Azure resources](images/create-new-app-service.png)
 12. In the **Publish** dialog, ensure your new App Service app is selected in **App Service instance**, then select **Finish**. Visual Studio creates a publish profile for you for the selected App Service app.
 13. In the **Publish** page, select **Publish**. If you see a warning message, select **Continue**.Visual Studio builds, packages, and publishes the app to Azure, and then launches the app in the default browser.
