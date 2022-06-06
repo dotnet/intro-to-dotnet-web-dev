@@ -8,6 +8,18 @@ Welcome! In this lesson, we'll teach you how to publish your web apps from the p
 Azure App Service is an HTTP-based service for hosting web applications, REST APIs, and mobile back ends. This service adds security, load balancing, autoscaling, automated management, and more to your applications. You can also take advantage of its DevOps capabilities, such as continuous deployment from Azure DevOps, GitHub, Docker Hub, and other sources, package management, staging environments, custom domain, and TLS/SSL certificates. 
 You can learn more in the [Azure App Service overview documentation](https://docs.microsoft.com/azure/app-service/overview).
 
+## Create your free Azure account
+
+1. Follow [this link](https://azure.microsoft.com/free/dotnet/) to the Azure website to sign up for your free account.
+2. Click on the green **Start Free** button.
+   ![Start free button](images/azure-start-free.png)
+3. Sign in to your Microsoft account if your are not already signed in.
+4. Agree to the customer agreement
+   ![Customer agreement](images/azure-customer-agreement.png)
+5. You will then be asked to provide a credit or debit card. This will make a temporary authorization on your card, but you won’t be charged unless you move to pay-as-you-go pricing.
+6. Click sign up and you're ready to publish your application!
+
+
 ## Let's publish!
 You can also find these instructions in the [Azure documentation](https://docs.microsoft.com/azure/app-service/quickstart-dotnetcore?tabs=net60&pivots=development-environment-vs).
 
