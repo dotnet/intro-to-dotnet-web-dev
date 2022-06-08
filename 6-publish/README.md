@@ -10,6 +10,9 @@ You can learn more in the [Azure App Service overview documentation](https://doc
 
 ## Create your free Azure account
 
+If you are a full time student at an accredited 2 or 4 year university, you can create your account with $100 worth of free Azure credits! For more information on student eligibility, check out this [FAQ](https://docs.microsoft.com/azure/education-hub/azure-dev-tools-teaching/program-faq#azure-for-students). Sign up [here](https://azure.microsoft.com/free/students/).
+
+Otherwise, you can still create a free Azure account by following these directions.
 1. Follow [this link](https://azure.microsoft.com/free/dotnet/) to the Azure website to sign up for your free account.
 2. Click on the green **Start Free** button.
    ![Start free button](images/azure-start-free.png)
