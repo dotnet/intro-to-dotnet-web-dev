@@ -223,3 +223,7 @@ In order to get started quickly, we've kept things as simple as we could, and we
 * [Create a web UI with ASP.NET Core](https://docs.microsoft.com/learn/modules/create-razor-pages-aspnet-core/) will walk you through a very similar Pizza application, but in more detail. You'll learn more about how things are working behind the scenes, and write more of the code by hand.
 
 * [Create a Razor Pages web app with ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/razor-pages/) goes even deeper, with more advanced data operations like search and adding new fields to your data model.
+
+# Connect with us
+
+We're excited to support you on your learning journey! Check out the [.NET Community Page](https://dotnet.microsoft.com/platform/community) to find links to our blogs, YouTube, Twitter, and more.
