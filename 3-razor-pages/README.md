@@ -9,7 +9,8 @@ Welcome back! In the last lesson, you got a crash course in C# language fundamen
 
 ## Okay, so what are Razor Pages?
 
-There are a few different kinds of web apps out there. If you’re building a highly interactive web apps – like a game or in-browser experience – you would probably want to use Blazor. You’ll learn about that In Week 5. But the huge majority of web sites out there run most of their logic on the server  - think shopping and commerce websites, web sites for small businesses and portfolios, news sites, etc. And that’s what Razor Pages is really good at.
+There are a few different kinds of web apps out there. If you’re building highly interactive web apps – like a game or in-browser experience – you would probably want to use Blazor. You’ll learn about that in Week 5. But the huge majority of web sites out there run most of their logic on the server  - think shopping and commerce websites, web sites for small businesses and portfolios, news sites, etc. And that’s what Razor Pages is really good at.
+
 
 In Razor Pages applications, you’ll write your logic in a Page Model class, and you’ll write your markup in a Razor file. Razor is a nifty language that blends HTML markup with C# logic, so you can pull in your dynamic information from your Page Model class and display it in Razor. If that sounds complicated, don’t worry, because you’re about to see how easy it is to write a simple Pizza store web app using Razor Pages.  
 
