@@ -4,7 +4,8 @@ Welcome back! In the last lesson, you got a crash course in C# language fundamen
 
 ## What's ASP.NET Core?
 
-.NET is pretty magical, because you can build all kinds of apps with it – mobile apps, games, desktop apps, web apps, and more. ASP.NET Core is a .NEt toolkit for building web sites, apps, and services with .NET.
+.NET is pretty magical, because you can build all kinds of apps with it – mobile apps, games, desktop apps, web apps, and more. ASP.NET Core is a .NET toolkit for building web sites, apps, and services with .NET.
+
 
 ## Okay, so what are Razor Pages?
 
