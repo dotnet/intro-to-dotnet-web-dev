@@ -194,7 +194,8 @@ From the **Tools** menu, select **NuGet Package Manager** > **Package Manager Co
 
    ![Solution Explorer](pmc.png)
 
-In the PMC, enter the following commands:
+In the Package Manager Console, or PMC, enter the following commands:
+
 
 ```powershell
 Add-Migration InitialCreate
