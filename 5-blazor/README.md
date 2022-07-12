@@ -120,7 +120,7 @@ Next, let's create a board component to be used by players in our game.  The com
 
 	![The initial Board component displayed on the Index page](img/2-Board-Step1.png)
 
-	Congratulations!  You've just built your first component and used in on a Blazor page.
+	Congratulations!  You've just built your first component and used it on a Blazor page.
 
 ## Adding layout and style to our board
 
