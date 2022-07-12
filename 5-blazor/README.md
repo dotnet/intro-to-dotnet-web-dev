@@ -528,3 +528,7 @@ This is just a simple game, and there's so much more you could do with it.  Look
 - Insert the game into a .NET MAUI with Blazor application and play it on your phone or tablet.
 
 Happy coding and have fun!
+
+## Connect with us
+
+We're excited to support you on your learning journey! Check out the [.NET Community Page](https://dotnet.microsoft.com/platform/community) to find links to our blogs, YouTube, Twitter, and more.
