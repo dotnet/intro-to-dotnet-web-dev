@@ -6,11 +6,9 @@ Welcome back! In the last lesson, you got a crash course in C# language fundamen
 
 .NET is pretty magical, because you can build all kinds of apps with it – mobile apps, games, desktop apps, web apps, and more. ASP.NET Core is a .NET toolkit for building web sites, apps, and services with .NET.
 
-
 ## Okay, so what are Razor Pages?
 
 There are a few different kinds of web apps out there. If you’re building highly interactive web apps – like a game or in-browser experience – you would probably want to use Blazor. You’ll learn about that in Week 5. But the huge majority of web sites out there run most of their logic on the server  - think shopping and commerce websites, web sites for small businesses and portfolios, news sites, etc. And that’s what Razor Pages is really good at.
-
 
 In Razor Pages applications, you’ll write your logic in a Page Model class, and you’ll write your markup in a Razor file. Razor is a nifty language that blends HTML markup with C# logic, so you can pull in your dynamic information from your Page Model class and display it in Razor. If that sounds complicated, don’t worry, because you’re about to see how easy it is to write a simple Pizza store web app using Razor Pages.  
 
@@ -96,7 +94,9 @@ You will receive a warning that you are overriding the existing **Index** files.
 
 ## Check out the IndexModel class
 
-//TODO: Break this into chunks and describe each
+Let's take a look at how a sample page in the site works - we'll start with the Index page. As explained earlier, the logic in a Razor Page goes in a Page Model class, and you’ll write your markup in a Razor file. We'll look at how those work, starting with the Index `PageModel`.
+
+A Razor page's `PageModel` class file defines any page handlers for HTTP requests sent to the page, and data used to render the page. The `PageModel` keeps those concerns separate from the Razor page, your app more modular, and easier to maintain. By convention, the `PageModel` class is named *[PageName]Model* and resides in the same namespace as the Razor page.
 
 ```csharp
 using System;
@@ -133,9 +133,23 @@ namespace RazorPagesPizza
 }
 ```
 
+A `PageModel` really has two jobs:
+
+* It assembles all the dynamic content you'll want to show in the page.
+* It handles all the page interactions, which normally map to HTTP verbs like GET, POST, DELETE, etc.
+
+The `IndexModel` uses EF Core to work with the database, allowing the `OnGetAsync` method to be pretty short. A database context called `_context` is kind of magically created for us in the class constructor (it's actually using ASP.NET Core's [dependency injection system](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection), but it's okay to just treat it as magic for now). EF Core allows us to just work with a C# list of items (our `Pizza` class in this case), and it does the work to synchronize our changes with a database.
+
+Currently, the `IndexModel` class handles the HTTP GET request with an `OnGetAsync` page handler. You can add handlers for any HTTP verb. The most common handlers are:
+
+* `OnGetAsync` to initialize state needed for the page.
+* `OnPostAsync` to handle form submissions. You can see an example in `Create.cshtml.cs`, and learn more about how form submissions work in the references in the **What's Next** section below.
+
 ## And now the Index page's Razor file
 
-//TODO: Break this into chunks and describe each
+Now that we've got a list of pizzas loaded into a variable (`Pizza` in this case), we can display it in the page. A Razor page supports Razor syntax, which is HTML and C# combined. The C# code defines the dynamic rendering logic for the page on the server. The default Razor language is HTML. Rendering HTML from Razor markup is no different than rendering HTML from an HTML file. HTML markup in .cshtml Razor page files is rendered by the server unchanged. In Razor Pages, HTML can be used as you're used to. At the same time, you can take advantage of powerful and time-saving Razor features as you learn to use them.
+
+You'll see below that we're transitioning between C# and HTML - starting with some C# to set a few things, then switching over to HTML with our `<h1>` tag. From then on, it's mostly HTML with some dynamic content sprinkled in.
 
 ```csharp
 @page
@@ -188,6 +202,8 @@ namespace RazorPagesPizza
 </table>
 ```
 
+Razor has a pretty lightweight syntax, so if you're familiar with HTML you can start with that and add in dynamic content and logic. There's more information about the [Razor syntax](https://docs.microsoft.com/aspnet/core/mvc/views/) in the docs, of course, and we cover it in a little more detail in the **What's Next** tutorial.
+
 ## Run database migrations
 
 From the **Tools** menu, select **NuGet Package Manager** > **Package Manager Console**.
@@ -195,7 +211,6 @@ From the **Tools** menu, select **NuGet Package Manager** > **Package Manager Co
    ![Solution Explorer](pmc.png)
 
 In the Package Manager Console, or PMC, enter the following commands:
-
 
 ```powershell
 Add-Migration InitialCreate
@@ -224,6 +239,6 @@ In order to get started quickly, we've kept things as simple as we could, and we
 
 * [Create a Razor Pages web app with ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/razor-pages/) goes even deeper, with more advanced data operations like search and adding new fields to your data model.
 
-# Connect with us
+## Connect with us
 
 We're excited to support you on your learning journey! Check out the [.NET Community Page](https://dotnet.microsoft.com/platform/community) to find links to our blogs, YouTube, Twitter, and more.
