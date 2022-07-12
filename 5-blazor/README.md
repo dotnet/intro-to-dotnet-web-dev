@@ -305,7 +305,7 @@ The game logic for Connect Four is not too difficult to program.  We need some c
 
 	We tell the game state to play a piece in the submitted column called `col` and capture the row reported by the game state.  We can then define the 3 CSS classes to assign to the game piece to identify the player's turn, the column the piece was placed in, and the landing row.  The last line of the method chooses the next element in the `Pieces` array and assigns these classes to that game piece.
 
-	If you look in the suppled `Board.razor.css` you'll find the CSS classes that match up to those assigned in line 2 of the method.
+	If you look in the supplied `Board.razor.css` you'll find the CSS classes that match up to those assigned in line 2 of the method.
 
 	The resultant effect is that the game piece is placed in the column and animated a drop into the bottom-most row when this method is called.
 
