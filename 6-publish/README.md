@@ -2,6 +2,9 @@
 
 Welcome! In this lesson, we'll teach you how to publish your web apps from the previous weeks' activities to Azure! We'll do this using Azure App Service.
 
+## What is Azure? 
+
+Azure is a cloud platform designed to simplify the process of building modern applications. You can host all kinds of applications on Azure! 
 
 ## What is Azure App Services and why are we publishing our apps? 
 
