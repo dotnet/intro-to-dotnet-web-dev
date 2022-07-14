@@ -30,21 +30,17 @@ We'll accomllish this by writing a classic four-in-a-row "Connect Four" game tha
 
 First, let's scaffold a new project for our game.  With .NET 6 installed, we can start building our application at the command-line.
 
-1. Create a new blazor application by running `dotnet new`
+1. Create a new blazor application in Visual Studio 2022 by choosing the "File - New... - Project" menu.
 
-	```bash
-	dotnet new blazorwasm -o ConnectFour
-	```
+1. Choose a "Blazor WebAssembly App" from the list of templates and name it "ConnectFour".  Click next
+
+1. Choose the .NET 6 framework, Authentication type should be set to "None" and uncheck the "ASP.NET Core hosted" checkbox.
 
 	This should create a _ConnectFour_ directory containing our application.
 
-1. Run the app by calling `dotnet run`.  This builds the app and hosts it on a random port between 5000 and 5300.  HTTPS has a port selected for it in the range of 7000 to 7300.
+2. Run the app by pressing **F5** in Visual Studio 2022.  This builds the app and hosts it on a random port between 5000 and 5300.  HTTPS has a port selected for it in the range of 7000 to 7300.
 
-	```bash
-	dotnet run
-	```
-
-	Your terminal should report content similar to the following:
+	Your Output Window should report content similar to the following:
 
 	```output
 	Building...
@@ -70,19 +66,9 @@ First, let's scaffold a new project for our game.  With .NET 6 installed, we can
 
 Next, let's create a board component to be used by players in our game.  The component is defined using Razor syntax, which is a mix of HTML and C#. 
 
-1. Navigate to the `Shared` folder:
+1. Right-click on the **Shared** folder in the Solution Explorer of Visual Studio.  Choose "Add - Razor Component" from the context menu and name the file `Board.razor`.  By placing this file in the **Share** folder, the component can be referenced and used throughout the application and will contain everything needed for the layout and managing interactions with it.
 
-	```bash
-	cd Shared
-	```
-
-1. Create the component using a .NET template.  This component can be referenced and used throughout the application and contains everything needed for the layout and managing interactions with it.
-
-	```bash
-	dotnet new razorcomponent Board
-	```
-
-	The contents of this new component are a simple H3 and a block indicating where C# code should be written:
+	The initial contents of this new component are a simple H3 and a block indicating where C# code should be written:
 
 	```csharp
 	<h3>Board</h3>
@@ -112,11 +98,7 @@ Next, let's create a board component to be used by players in our game.  The com
 
 	The `Index.razor` file is a **Page** that can be navigated to and contains HTML, C#, and references to other Blazor components.  We can identify this file as a page due to the presence of the `@page "/"` directive on the first line.  This instructs Blazor to respond with the contents of this file when the default page at the "/" address is requested.
 
-	Let's run our application with `dotnet watch`.  The `watch` command will rebuild and refresh our browser as we add new features to the application.  This will allow you to observe the evolution of the game from a simple page to a full Connect Four board with interactive pieces.
-
-	```bash
-	dotnet watch
-	```
+	Let's run our application with **F5** and in the hot-reload toolbar button activate the "Hot reload on file save" option.  The hot-reload feature will patch and rebuild our application, and then refresh our browser as we add new features to the application.  Hot reload allows you to observe the evolution of the game from a simple page to a full Connect Four board with interactive pieces.
 
 	![The initial Board component displayed on the Index page](img/2-Board-Step1.png)
 
@@ -150,13 +132,7 @@ Blazor components contain all of the HTML and markup needed to be rendered in a 
 
 	It may seem strange to allocate 42 `span` elements inside of a `div`.  When we save the board component, our application refreshes and it appears as an empty page.
 
-	You may be prompted by the `dotnet watch` command to restart your app with a prompt like the following:
-
-	```output
-	  ❔ Do you want to restart your app - Yes (y) / No (n) / Always (a) / Never (v)?
-	```
-
-	Answer "a" for always, and our application will automatically restart and refresh the browser for us as we add features.
+	You may be prompted by Visual Studio to restart your app as files change.  Confirm that the application should be rebuilt on code edits, and our application will automatically restart and refresh the browser for us as we add features.
 
 2. Let's add some style to this component.  Blazor components can define content to be added to the HTML head of the page using a special **HeadContent** tag.  Let's define some colors for the frame of the board and the players just above the first **div** tag of our `Board.razor` file:
 
