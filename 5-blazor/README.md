@@ -102,7 +102,7 @@ Next, let's create a board component to be used by players in our game.  The com
 
 	![The initial Board component displayed on the Index page](img/2-Board-Step1.png)
 
-	Congratulations!  You've just built your first component and used in on a Blazor page.
+	Congratulations!  You've just built your first component and used it on a Blazor page.
 
 ## Adding layout and style to our board
 
@@ -153,7 +153,13 @@ Blazor components contain all of the HTML and markup needed to be rendered in a 
 
 	These CSS variables will be picked up and used in the rest of our stylesheet for this component.
 
-1. Next, we'll add a completed stylesheet for the game from the `0-start` folder in this repository.  Copy the [0-start/Shared/Board.razor.css](0-start/Shared/Board.razor.css) file into the same folder location in your project.
+1. Next, we'll add a completed stylesheet for the game from the `0-start` folder in this repository.  Create a file called `Board.razor.css` and place it next to the `Board.razor` file in the `Shared` folder.  Copy the following content into the new `Board.razor.css` file:
+
+	```css
+	div{position:relative}nav{top:4em;width:30em;display:inline-flex;flex-direction:row;margin-left:10px}nav span{width:4em;text-align:center;cursor:pointer;font-size:1em}div.board{margin-top:1em;flex-wrap:wrap;width:30em;height:24em;overflow:hidden;display:inline-flex;flex-direction:row;flex-wrap:wrap;z-index:-5;row-gap:0;pointer-events:none;border-left:10px solid var(--board-bg)}span.container{width:4em;height:4em;margin:0;padding:4px;overflow:hidden;background-color:transparent;position:relative;z-index:-2;pointer-events:none}.container span{width:3.5em;height:3.5em;border-radius:50%;box-shadow:0 0 0 3em var(--board-bg);left:0;position:absolute;display:block;z-index:5;pointer-events:none}.player1,.player2{width:3.5em;height:3.5em;border-radius:50%;left:0;top:0;position:absolute;display:block;z-index:-8}.player1{background-color:var(--player1);animation-timing-function:cubic-bezier(.5,.05,1,.5);animation-iteration-count:1;animation-fill-mode:forwards;box-shadow:0 0 0 4px var(--player1)}.player2{background-color:var(--player2);animation-timing-function:cubic-bezier(.5,.05,1,.5);animation-iteration-count:1;animation-fill-mode:forwards;box-shadow:0 0 0 4px var(--player2)}.col1{left:calc(0em + 9px)}.col2{left:calc(4em + 9px)}.col3{left:calc(8em + 9px)}.col4{left:calc(12em + 9px)}.col5{left:calc(16em + 9px)}.col6{left:calc(20em + 9px)}.col7{left:calc(24em + 9px)}.drop1{animation-duration:1s;animation-name:drop1}.drop2{animation-duration:1.5s;animation-name:drop2}.drop3{animation-duration:1.6s;animation-name:drop3}.drop4{animation-duration:1.7s;animation-name:drop4}.drop5{animation-duration:1.8s;animation-name:drop5}.drop6{animation-duration:1.9s;animation-name:drop6}@keyframes drop1{100%,75%,90%,97%{transform:translateY(1.27em)}80%{transform:translateY(.4em)}95%{transform:translateY(.8em)}99%{transform:translateY(1em)}}@keyframes drop2{100%,75%,90%,97%{transform:translateY(5.27em)}80%{transform:translateY(3.8em)}95%{transform:translateY(4.6em)}99%{transform:translateY(4.9em)}}@keyframes drop3{100%,75%,90%,97%{transform:translateY(9.27em)}80%{transform:translateY(7.2em)}95%{transform:translateY(8.3em)}99%{transform:translateY(8.8em)}}@keyframes drop4{100%,75%,90%,97%{transform:translateY(13.27em)}80%{transform:translateY(10.6em)}95%{transform:translateY(12em)}99%{transform:translateY(12.7em)}}@keyframes drop5{100%,75%,90%,97%{transform:translateY(17.27em)}80%{transform:translateY(14em)}95%{transform:translateY(15.7em)}99%{transform:translateY(16.5em)}}@keyframes drop6{100%,75%,90%,97%{transform:translateY(21.27em)}80%{transform:translateY(17.4em)}95%{transform:translateY(19.4em)}99%{transform:translateY(20.4em)}}
+	```
+
+	For convenience, you can also find this content in the [0-start/Shared/Board.razor.css](0-start/Shared/Board.razor.css) file in this repository.
 
 	Blazor components and pages have a feature called CSS isolation that allows you to create style rules that will only be applied to the contents of that component or page.  By creating a file with the same name as our component and adding the `.css` filename extension, Blazor will recognize this as the styles that should **ONLY** be applied to HTML content in the `Board.razor` template.
 
@@ -281,7 +287,7 @@ The game logic for Connect Four is not too difficult to program.  We need some c
 
 	We tell the game state to play a piece in the submitted column called `col` and capture the row reported by the game state.  We can then define the 3 CSS classes to assign to the game piece to identify the player's turn, the column the piece was placed in, and the landing row.  The last line of the method chooses the next element in the `Pieces` array and assigns these classes to that game piece.
 
-	If you look in the suppled `Board.razor.css` you'll find the CSS classes that match up to those assigned in line 2 of the method.
+	If you look in the supplied `Board.razor.css` you'll find the CSS classes that match up to those assigned in line 2 of the method.
 
 	The resultant effect is that the game piece is placed in the column and animated a drop into the bottom-most row when this method is called.
 
@@ -504,3 +510,7 @@ This is just a simple game, and there's so much more you could do with it.  Look
 - Insert the game into a .NET MAUI with Blazor application and play it on your phone or tablet.
 
 Happy coding and have fun!
+
+## Connect with us
+
+We're excited to support you on your learning journey! Check out the [.NET Community Page](https://dotnet.microsoft.com/platform/community) to find links to our blogs, YouTube, Twitter, and more.
