@@ -101,16 +101,12 @@
 			GameState.WinState.Tie => "It's a tie!",
 			_ => ""
 		};
-		if (WinnerMessage != string.Empty) {
-			ResetStyle = string.Empty;
-		}
 
 	}
 
 	void ResetGame()
 	{
 		State.ResetBoard();
-		ResetStyle = "display: none;";
 		WinnerMessage = string.Empty;
 		ErrorMessage = string.Empty;
 		Pieces = new string[42];
