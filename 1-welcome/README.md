@@ -1,5 +1,6 @@
 # Welcome to the Intro to Web Dev with .NET series
 In this Welcome, we’ll introduce ourselves, give you the lesson rundown, take you on a tour of the .NET ecosystem, and show you all the tools you’ll need to build the projects. 
+
 ![.NET bot waving](../images/dotnet-bot.svg)
 
 ## Prerequisite tools
@@ -22,7 +23,6 @@ Let us introduce ourselves. The content in this series is all written by .NET De
 To start you on your journey I want to give you a brief overview of what C# and .NET are, and what tools you will need to get going. 
 
 ## What is .NET? 
-
 .NET is a free, cross-platform, open source developer platform for building many different types of applications. This platform is used by companies of all different industries and different sizes. If you’ve ever used Stack Overflow, eaten Chipotle, or received a package delivered by UPS, then you’ve interacted with .NET! 
 
 With .NET, you can use multiple languages, editors, and libraries to build for web, mobile, desktop, games, IoT, and more! 

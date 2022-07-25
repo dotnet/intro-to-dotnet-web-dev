@@ -36,18 +36,16 @@ There's a few places you can go for help and more information on the topics cove
 1. [Web APIs for Beginners](https://aka.ms/WebLearningSeries-git-apivids)
 
 ## How to leave feedback 
-To leave us feedback on this learning series, please fill out our [survey]() or file an issue in this repository.
+To leave us feedback on this learning series, please fill out our [survey](https://aka.ms/WebLearningSeries-git-survey) or file an issue in this repository.
  
 
 ## Learn More & Connect with us 
 
-Start a .NET [Learning Path]()
+Start a .NET [Learning Path](https://aka.ms/WebLearningSeries-git-MSLearn)
 
-Find a .NET user group & join a .NET events at our [Community Page]().
+Find a .NET user group & join a .NET events at our [Community Page](https://aka.ms/WebLearningSeries-git-community).
 
-Follow us [@dotnet on Twitter]()
-
-Join the [.NET community on LinkedIn]()
+Follow us [@dotnet on Twitter](https://aka.ms/WebLearningSeries-git-twitter)
 
 ## .NET Foundation
 

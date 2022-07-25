@@ -242,3 +242,7 @@ In order to get started quickly, we've kept things as simple as we could, and we
 ## Connect with us
 
 We're excited to support you on your learning journey! Check out the [.NET Community Page](https://dotnet.microsoft.com/platform/community) to find links to our blogs, YouTube, Twitter, and more.
+
+# How'd it go?
+
+Please take this quick, [10 question survey](https://aka.ms/WebLearningSeries-git-survey) to give us your thoughts on this lesson & challenge!

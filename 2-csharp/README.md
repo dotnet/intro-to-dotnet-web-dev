@@ -244,3 +244,7 @@ Want more practice with C#? The .NET team has you covered. Here's a few learning
 * [Learn to Code Page](https://dotnet.microsoft.com/learntocode)
 
 Connect with us! Check out the [.NET Community Page](https://dotnet.microsoft.com/platform/community) to find links to our blogs, YouTube, Twitter, and more.
+
+# How'd it go?
+
+Please take this quick, [10 question survey](https://aka.ms/WebLearningSeries-git-survey) to give us your thoughts on this lesson & challenge!
