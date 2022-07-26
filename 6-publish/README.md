@@ -62,4 +62,13 @@ You can also find these instructions in the [Azure documentation](https://docs.m
 12. In the **Publish** dialog, ensure your new App Service app is selected in **App Service instance**, then select **Finish**. Visual Studio creates a publish profile for you for the selected App Service app.
 13. In the **Publish** page, select **Publish**. If you see a warning message, select **Continue**.Visual Studio builds, packages, and publishes the app to Azure, and then launches the app in the default browser.
 
-Congratulations 🎉 You've just published your web applications!
+Congratulations 🎉 You've just published your web applications! Thank you for joining us on our exploration of web development with .NET. We hope you learned something and had fun!
+
+
+## Connect with us
+
+We're excited to support you on your learning journey! Check out the [.NET Community Page](https://dotnet.microsoft.com/platform/community) to find links to our blogs, YouTube, Twitter, and more.
+
+# How'd it go?
+
+Please take this quick, [10 question survey](https://aka.ms/WebLearningSeries-git-survey) to give us your thoughts on this lesson & challenge!
