@@ -4,12 +4,12 @@ Today we're going to learn how to build a Blazor application by recreating the c
 
 ## What is Blazor
 
-Blazor is a framework for building web pages with HTML, CSS, and C#.  We can define the layout and design of the website using standard HTML and CSS.  The interactive components of the web pages can then be managed with C# code that runs on a server or in the browser using a web standard technology called Web Assembly.  The formatting of HTML and CSS will build on what we learned in our previous sessions, using the Razor template language.
+Blazor is a framework for building web pages with HTML, CSS, and C#.  We can define the layout and design of the website using standard HTML and CSS.  The interactive components of the web pages can then be managed with C# code that runs on a server or in the browser using a web standard technology called WebAssembly.  The formatting of HTML and CSS will build on what we learned in our previous sessions, using the Razor template language.
 Blazor allows us to define our web pages using Razor and include other Razor files as components inside those pages.  This means we can build and re-use parts of our application easily.
 
-## What is Web Assembly?
+## What is WebAssembly?
 
-Web Assembly is a standard technology available in every modern browser that allows code to run, similar to JavaScript, in a browser.  We can use tools to prepare our C# code for use in the browser as a web assembly application, and these tools are bundled into the .NET command-line application.
+WebAssembly is a standard technology available in every modern browser that allows code to run, similar to JavaScript, in a browser.  We can use tools to prepare our C# code for use in the browser as a web assembly application, and these tools are bundled into the .NET command-line application.
 
 ## Structure of this repository
 
@@ -20,11 +20,11 @@ We're including all of the layout and game logic in this repository as well as a
 This repository will walk you through Blazor and introduce the following concepts:
 
 -	Blazor component fundamentals
--	How to get started with the Blazor Web Assembly project template
+-	How to get started with the Blazor WebAssembly project template
 -	How to construct and use a layout for a Blazor component
 -	How to react to user interactions
 
-We'll accomllish this by writing a classic four-in-a-row "Connect Four" game that runs in your browser using Web Assembly.  In this game, 2 players alternate taking turns placing a gamepiece (typically a checker) in the top of the board.  Game pieces fall to the lowest row of a column and the player that places 4 game pieces to make a line horizontally, vertically, or diagonally wins.
+We'll accomllish this by writing a classic four-in-a-row "Connect Four" game that runs in your browser using WebAssembly.  In this game, 2 players alternate taking turns placing a gamepiece (typically a checker) in the top of the board.  Game pieces fall to the lowest row of a column and the player that places 4 game pieces to make a line horizontally, vertically, or diagonally wins.
 
 ## Create a new Blazor project
 
@@ -38,29 +38,29 @@ First, let's scaffold a new project for our game.  With .NET 6 installed, we can
 
 	This should create a _ConnectFour_ directory containing our application.
 
-2. Run the app by pressing **F5** in Visual Studio 2022.  This builds the app and hosts it on a random port between 5000 and 5300.  HTTPS has a port selected for it in the range of 7000 to 7300.
+2. Run the app by pressing <kbd>F5</kbd> in Visual Studio 2022.  This builds the app and hosts it on a random port between 5000 and 5300.  HTTPS has a port selected for it in the range of 7000 to 7300.
 
 	Your Output Window should report content similar to the following:
 
 	```output
 	Building...
-		info: Microsoft.Hosting.Lifetime[14]
-					Now listening on: https://localhost:7296
-		info: Microsoft.Hosting.Lifetime[14]
-					Now listening on: http://localhost:5136
-		info: Microsoft.Hosting.Lifetime[0]
-					Application started. Press Ctrl+C to shut down.
-		info: Microsoft.Hosting.Lifetime[0]
-					Hosting environment: Development
-		info: Microsoft.Hosting.Lifetime[0]
-					Content root path: C:\dev\ConnectFour
+	info: Microsoft.Hosting.Lifetime[14]
+		Now listening on: https://localhost:7296
+	info: Microsoft.Hosting.Lifetime[14]
+		Now listening on: http://localhost:5136
+	info: Microsoft.Hosting.Lifetime[0]
+		Application started. Press Ctrl+C to shut down.
+	info: Microsoft.Hosting.Lifetime[0]
+		Hosting environment: Development
+	info: Microsoft.Hosting.Lifetime[0]
+		Content root path: C:\dev\ConnectFour
 	```
 
 1. Let's navigate to the address our web server announced it's serving the application at.  You might be able to Ctrl+Click on the address in your terminal, or just copy the address into your browser.  In the above sample, we would navigate to `http://localhost:5136`.  You should be presented with the following welcome screen in your browser:
 
 	![Screenshot from the new Blazor Template](img/1-NewTemplate.png)
 
-	Congratulations!  You've created your first Blazor application using the Blazor Web Assembly template.
+	Congratulations!  You've created your first Blazor application using the Blazor WebAssembly template.
 
 ## Create a Board component
 
@@ -98,7 +98,7 @@ Next, let's create a board component to be used by players in our game.  The com
 
 	The `Index.razor` file is a **Page** that can be navigated to and contains HTML, C#, and references to other Blazor components.  We can identify this file as a page due to the presence of the `@page "/"` directive on the first line.  This instructs Blazor to respond with the contents of this file when the default page at the "/" address is requested.
 
-	Let's run our application with **F5** and in the hot-reload toolbar button activate the "Hot reload on file save" option.  The hot-reload feature will patch and rebuild our application, and then refresh our browser as we add new features to the application.  Hot reload allows you to observe the evolution of the game from a simple page to a full Connect Four board with interactive pieces.
+	Let's run our application with <kbd>F5</kbd> and in the hot-reload toolbar button activate the "Hot reload on file save" option.  The hot-reload feature will patch and rebuild our application, and then refresh our browser as we add new features to the application.  Hot reload allows you to observe the evolution of the game from a simple page to a full Connect Four board with interactive pieces.
 
 	![The initial Board component displayed on the Index page](img/2-Board-Step1.png)
 
@@ -114,19 +114,14 @@ Blazor components contain all of the HTML and markup needed to be rendered in a 
 
 	```csharp
 	<div>
-
 		<div class="board">
-
-
 			@for (var i = 0; i < 42; i++)
 			{
 				<span class="container">
 					<span></span>
 				</span>
 			}
-
 		</div>
-
 	</div>
 	```
 
@@ -238,9 +233,7 @@ The game logic for Connect Four is not too difficult to program.  We need some c
 	@code {
 		protected override void OnInitialized()
 		{
-
 			State.ResetBoard();
-
 		}
 	}
 	```
@@ -252,7 +245,6 @@ The game logic for Connect Four is not too difficult to program.  We need some c
 	Let's allocate those 42 spans just above the `@code` line, but inside the closing `</div>` element.  We'll also define a private array to hold the CSS classes we will assign to the 42 game pieces: 
 
 	```csharp
-	...
 	@for (var i = 0; i < 42; i++)
 	{
 		<span class="@Pieces[i]"></span>
@@ -263,8 +255,6 @@ The game logic for Connect Four is not too difficult to program.  We need some c
 	@code {
 
 	private string[] Pieces = new string[42];
-
-	...
 	```
 
 	By default initialization of a string array, this will assign an empty string to the CSS class of each game piece span.  This will prevent the game pieces from appearing on screen as they have no contents and no style applied to them.
@@ -277,11 +267,9 @@ The game logic for Connect Four is not too difficult to program.  We need some c
 
 	private void PlayPiece(byte col) 
 	{
-
 		var landingRow = State.PlayPiece(col);
 		var cssClass = $"player{State.PlayerTurn} col{col} drop{landingRow}";
 		Pieces[State.CurrentTurn - 1] = cssClass;
-
 	}
 	```
 
@@ -332,7 +320,6 @@ Let's add some error handling and indicators to our board to make the current st
 1.	Let's add a simple status area above the board, and below the drop buttons.  Insert the following markup after the closing `</nav>` element:
 
 	```csharp
-	...
 	</nav>
 
 	<article>
@@ -413,13 +400,13 @@ Let's add some error handling and indicators to our board to make the current st
 1. Let's detect if there is a winner to the game by adding a switch expression after our try...catch block in `PlayPiece`
 
 	```csharp
-		WinnerMessage = State.CheckForWin() switch
-		{
-			GameState.WinState.Player1_Wins => "Player 1 Wins!",
-			GameState.WinState.Player2_Wins => "Player 2 Wins!",
-			GameState.WinState.Tie => "It's a tie!",
-			_ => ""
-		};
+	WinnerMessage = State.CheckForWin() switch
+	{
+		GameState.WinState.Player1_Wins => "Player 1 Wins!",
+		GameState.WinState.Player2_Wins => "Player 2 Wins!",
+		GameState.WinState.Tie => "It's a tie!",
+		_ => ""
+	};
 	```
 
 	The `CheckForWin` method will return an enum that reports which player, if any has won the game or if the game is a tie.  This switch expression will set the `WinnerMessage` field appropriately if a game over state has occurred.
@@ -464,9 +451,9 @@ Parameters in Blazor are properties in our component that have been decorated wi
 	<HeadContent>
 		<style>
 			:root {
-					--board-bg: @ColorTranslator.ToHtml(BoardColor);
-					--player1: @ColorTranslator.ToHtml(Player1Color);
-					--player2: @ColorTranslator.ToHtml(Player2Color);
+				--board-bg: @ColorTranslator.ToHtml(BoardColor);
+				--player1: @ColorTranslator.ToHtml(Player1Color);
+				--player2: @ColorTranslator.ToHtml(Player2Color);
 			}
 		</style>
 	</HeadContent>
