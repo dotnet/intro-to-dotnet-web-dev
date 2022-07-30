@@ -3,7 +3,10 @@ Welcome to the Intro to Web Development with .NET GitHub repository! We’re exc
 
 Here, you'll find a 6-part series of lessons and projects to get you started building web applications with .NET!  
 
-![.NET Bot](/images/dotnet-bot_jetpack-faceing-right.svg)
+## Video Introduction
+[<img src="/images/intro-thumbnail.jpg" alt="drawing" width="700"/>](https://www.youtube.com/watch?v=joKb1gvzP9U "Intro to .NET Web Dev")
+> 🎥 Click the image above for a video about the series!
+
 ## How-to 
 To use this curriculum on your own, fork the entire repo and go into the numbered folders to access the lessons and projects. This series is designed to take 6 weeks, about 1 week per lesson, but feel free to complete it at your own pace.  
 
@@ -46,6 +49,9 @@ Start a .NET [Learning Path](https://aka.ms/WebLearningSeries-git-MSLearn)
 Find a .NET user group & join a .NET events at our [Community Page](https://aka.ms/WebLearningSeries-git-community).
 
 Follow us [@dotnet on Twitter](https://aka.ms/WebLearningSeries-git-twitter)
+
+![.NET Bot](/images/dotnet-bot_jetpack-faceing-right.svg)
+
 
 ## .NET Foundation
 
