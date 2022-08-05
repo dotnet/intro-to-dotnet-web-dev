@@ -1,7 +1,10 @@
 ## Intro to Web Development with .NET 
 Welcome to the Intro to Web Development with .NET GitHub repository! We’re excited to take you along with us as we build awesome projects and learn all about the wonderful world of web development.
 
-Here, you'll find a 6-part series of lessons and projects to get you started building web applications with .NET!  
+Here, you'll find a 6-part series of lessons and projects to get you started building web applications with .NET! 
+
+> **Note**
+> The content in this repo is part of a free, 6-part e-mail series that will teach you something new every week. The e-mails include introductions to the content in these lessons. If you came here directly and haven't signed up for the e-mails, you can do that here: https://aka.ms/WebLearningSeries/signup  
 
 ## Video Introduction
 [<img src="/images/intro-thumbnail.jpg" alt="drawing" width="700"/>](https://www.youtube.com/watch?v=joKb1gvzP9U "Intro to .NET Web Dev")
