@@ -191,7 +191,7 @@ First you need some data. To store and manage data, you'll use an in-memory stor
 
       public static void RemovePizza(int id)
       {
-        _pizzas = _pizzas.FindAll(pizza => pizza.Id == id).ToList();
+        _pizzas = _pizzas.FindAll(pizza => pizza.Id != id).ToList();
       }
     }
    ```
