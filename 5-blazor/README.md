@@ -287,13 +287,13 @@ The game logic for Connect Four is not too difficult to program.  We need some c
 
 	```csharp
 	<nav>
+		<span title="Click to play a piece" @onclick="() => PlayPiece(0)">🔽</span>
 		<span title="Click to play a piece" @onclick="() => PlayPiece(1)">🔽</span>
 		<span title="Click to play a piece" @onclick="() => PlayPiece(2)">🔽</span>
 		<span title="Click to play a piece" @onclick="() => PlayPiece(3)">🔽</span>
 		<span title="Click to play a piece" @onclick="() => PlayPiece(4)">🔽</span>
 		<span title="Click to play a piece" @onclick="() => PlayPiece(5)">🔽</span>
 		<span title="Click to play a piece" @onclick="() => PlayPiece(6)">🔽</span>
-		<span title="Click to play a piece" @onclick="() => PlayPiece(7)">🔽</span>
 	</nav>
 	```
 
