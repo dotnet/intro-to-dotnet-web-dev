@@ -10,7 +10,7 @@ In this Welcome, we’ll introduce ourselves, give you the lesson rundown, take 
 During the series you will learn the basics of C#, building websites and web APIs, and even how to publish your apps to the cloud. Here is a rundown of what the next few weeks will look like. 
 
 ## Who are we?
-Let us introduce ourselves. The content in this series is all written by .NET Developer Community Team from Microsoft. More specifically, Jon, James, Jeff, and Katie will be teaching you web development and all things .NET. 
+Let us introduce ourselves. The content in this series is all written by .NET Developer Community Team from Microsoft. More specifically, Jon, James, Jeff, and Katie will be teaching you web development and all things about .NET. 
 
 ## What to expect
 - Week 1 – Welcome!  
