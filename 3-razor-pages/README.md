@@ -96,7 +96,7 @@ You will receive a warning that you are overriding the existing **Index** files.
 
 Let's take a look at how a sample page in the site works - we'll start with the Index page. As explained earlier, the logic in a Razor Page goes in a Page Model class, and you’ll write your markup in a Razor file. We'll look at how those work, starting with the Index `PageModel`.
 
-A Razor page's `PageModel` class file defines any page handlers for HTTP requests sent to the page, and data used to render the page. The `PageModel` keeps those concerns separate from the Razor page, your app more modular, and easier to maintain. By convention, the `PageModel` class is named *[PageName]Model* and resides in the same namespace as the Razor page.
+A Razor page's `PageModel` class file defines any page handlers for HTTP requests sent to the page, and data used to render the page. The `PageModel` keeps those concerns separate from the Razor page, making your app more modular, and easier to maintain. By convention, the `PageModel` class is named *[PageName]Model* and resides in the same namespace as the Razor page.
 
 ```csharp
 using System;
