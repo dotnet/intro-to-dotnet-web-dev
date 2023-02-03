@@ -58,7 +58,7 @@ Follow us [@dotnet on Twitter](https://aka.ms/WebLearningSeries-git-twitter)
 
 ## .NET Foundation
 
-.NET Interative Notebooks for C# is a [.NET Foundation](https://www.dotnetfoundation.org/projects) project.
+.NET Interactive Notebooks for C# is a [.NET Foundation](https://www.dotnetfoundation.org/projects) project.
 
 There are many .NET related projects on GitHub.
 
