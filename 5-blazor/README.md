@@ -207,9 +207,11 @@ Blazor components contain all of the HTML and markup needed to be rendered in a 
 
 ## Introducing Game Logic and Controls
 
-The game logic for Connect Four is not too difficult to program.  We need some code that will manage the state of the game and identify 4 consecutive game pieces played next to each other and announce the winner.  To help keep this tutorial on-topic with teaching about Blazor, we are providing a class called `GameState.cs` that contains the logic for managing the game.
+The game logic for Connect Four is not too difficult to program.  We need some code that will manage the state of the game and identify 4 consecutive game pieces played next to each other and announce the winner.  To help keep this tutorial on-topic with teaching about Blazor, we are providing a class called `GameState.cs` that contains the logic for managing the game.  
 
-1. Copy the [GameState.cs file](1-complete/ConnectFour/Shared/GameState.cs) into your project in the `Shared` folder.
+The [GameState.cs file is in this repository](1-complete/ConnectFour/Shared/GameState.cs) and you will copy it into your version of the game.
+
+1. Copy the [GameState.cs file](1-complete/ConnectFour/Shared/GameState.cs) from this repository into your project in the `Shared` folder.
 
 1. We need to make an instance of the `GameState` available to any component that requests it, and only 1 instance of `GameState` should be available in our application at a time.  We will address this need by registering our GameState as a Singleton in the application.  Open the `Program.cs` file at the root of the project and let's add this statement after the `builder.AddServices...` statement:
 
