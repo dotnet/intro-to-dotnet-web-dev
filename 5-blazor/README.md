@@ -66,9 +66,9 @@ First, let's scaffold a new project for our game.  With .NET 6 installed, we can
 
 Next, let's create a board component to be used by players in our game.  The component is defined using Razor syntax, which is a mix of HTML and C#. 
 
-1. Right-click on the **Shared** folder in the Solution Explorer of Visual Studio.  Choose "Add - Razor Component" from the context menu and name the file `Board.razor`.  By placing this file in the **Share** folder, the component can be referenced and used throughout the application and will contain everything needed for the layout and managing interactions with it.
+1. Right-click on the **Shared** folder in the Solution Explorer of Visual Studio.  Choose "Add - Razor Component" from the context menu and name the file `Board.razor`.  Place this file in the **Shared** folder and this will allow the component to be referenced and used throughout the application. We will use this component to hold everything needed for the game-board layout and managing interactions with it.
 
-	The initial contents of this new component are a simple H3 and a block indicating where C# code should be written:
+	The initial contents of this new component are a simple H3 tag and a code block indicating where C# code should be written:
 
 	```csharp
 	<h3>Board</h3>
@@ -110,7 +110,7 @@ Blazor components contain all of the HTML and markup needed to be rendered in a 
 
 1. In the `Board.razor` file let's remove the HTML at the top and add the following content to define a board with 42 places to move.  
   
-	We can mix some C# code with a for loop to generate the 42 board positions.  Just like razor pages and MVC views, we can indicate the start of our C# code with an `@` symbol.  Razor will continue interpreting C# code after the `@` until it identifies a tag that it will then render normally.  In this case, the **span** tag will be picked up and repeated with its contents 42 times.
+	We can mix in some C# code in the form of a for loop to generate the 42 board positions.  Just like razor pages and MVC views, we indicate the start of our C# code with an `@` symbol.  Razor will continue interpreting C# code after the `@` until it identifies a tag that it will then render normally.  In this case, the **span** tag will be picked up and repeated with its contents 42 times.
 
 	```csharp
 	<div>
@@ -146,7 +146,7 @@ Blazor components contain all of the HTML and markup needed to be rendered in a 
 	...
 	```
 
-	These CSS variables will be picked up and used in the rest of our stylesheet for this component.
+	This **style** tag and contents will be delivered inside the **head** tag on the page. These CSS variables will be picked up and used in the rest of our stylesheet for this component.
 
 3. Next, we'll add a completed stylesheet for the game from the `0-start` folder in this repository.  Right-click in the Solution Explorer on the **Shared** folder and create a new CSS file called `Board.razor.css`.  Copy the following content into the new `Board.razor.css` file:
 
@@ -242,7 +242,7 @@ The [GameState.cs file is in this repository](1-complete/ConnectFour/Shared/Game
 
 	When the board is first shown to a user, the state will be reset to the beginning of a game.
 
-2. Next, let's allocate the possible 42 game pieces that could be played.  This should be an array that is referenced by 42 HTML elements that will be moved and places in the board.  We can move and place those pieces by assigning a set of CSS classes with column and row positions.
+2. Next, let's allocate the possible 42 game pieces that could be played.  This should be an array that is referenced by 42 HTML elements that will be managed as pieces are played on the board.  We can move and place those pieces by assigning a set of CSS classes with column and row positions.
 
 	Let's allocate those 42 spans just above the `@code` line, but inside the closing `</div>` element.  We'll also define a private array to hold the CSS classes we will assign to the 42 game pieces: 
 
@@ -275,11 +275,11 @@ The [GameState.cs file is in this repository](1-complete/ConnectFour/Shared/Game
 	}
 	```
 
-	We tell the game state to play a piece in the submitted column called `col` and capture the row reported by the game state.  We can then define the 3 CSS classes to assign to the game piece to identify the player's turn, the column the piece was placed in, and the landing row.  The last line of the method chooses the next element in the `Pieces` array and assigns these classes to that game piece.
+	We tell the game state to play a piece in the submitted column called `col` and capture the row reported by the game state.  We can then define the 3 CSS classes to assign to the game piece to identify which player is currently acting, the column the piece was placed in, and the landing row.  The last line of the method chooses the next element in the `Pieces` array and assigns these classes to that game piece.
 
 	If you look in the supplied `Board.razor.css` you'll find the CSS classes that match up to those assigned in line 2 of the method.
 
-	The resultant effect is that the game piece is placed in the column and animated a drop into the bottom-most row when this method is called.
+	The resultant effect is that the game piece is placed in the column and animated to drop into the bottom-most row when this method is called.
 
 1. We next need to place some controls that allow players to choose a column and call our new `PlayPiece` method.  Let's add a row of HTML elements above the board that will call this method when they are clicked.
 
@@ -340,7 +340,7 @@ Let's add some error handling and indicators to our board to make the current st
 
 	Let's fill in some logic to set these values
 
-1.	We need to add fields for these indicators.  Add the following fields after the `Pieces` statement in code:
+1.	We need to add fields in our code for these indicators.  Add the following fields after the `Pieces` statement in code:
 
 	```csharp
 	private string[] Pieces = new string[42];
@@ -461,7 +461,7 @@ Parameters in Blazor are properties in our component that have been decorated wi
 	</HeadContent>
 	```
 
-	That shouldn't have changed anything on our game board.  
+	That shouldn't have changed anything in the appearance of our game board.  
 	
 1.	Let's head back to `Pages/Index.razor` and add some parameters to our `<Board>` tag and see how they change the game
 
