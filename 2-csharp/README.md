@@ -61,7 +61,7 @@ Time for your first challenge!
 
 | # | Challenge  | Solution   | Duration   | What you will learn | More information |
 |-| ------------------------------- | ------------------------------- | ----------- |  -------------------------------------- | - |
-1 | [Hello World Challenge](https://docs.microsoft.com/learn/modules/csharp-write-first/2-exercise-hello-world/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.languages.csharp-first-steps)| N/A | 3 min |  case sensitive, strings, comments | [Intro to C# Tutorial](https://docs.microsoft.com/dotnet/csharp/tour-of-csharp/tutorials/hello-world?WT.mc_id=csharpnotebook-35129-website), [C# documentation](https://docs.microsoft.com/dotnet/csharp/) |
+1 | [Hello World Challenge](https://learn.microsoft.com/en-us/training/modules/csharp-write-first/2-exercise-hello-world)| N/A | 3 min |  case sensitive, strings, comments | [Intro to C# Tutorial](https://docs.microsoft.com/dotnet/csharp/tour-of-csharp/tutorials/hello-world?WT.mc_id=csharpnotebook-35129-website), [C# documentation](https://docs.microsoft.com/dotnet/csharp/) |
 
 ## Variables
 
