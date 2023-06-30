@@ -14,7 +14,7 @@
 		"vscode": {
 			"settings": {},
 			"extensions": [
-        "ms-dotnettools.csdevkit"
+				"ms-dotnettools.csdevkit"
 			]
 		}
 	}
