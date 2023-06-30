@@ -11,7 +11,7 @@ Here, you'll find a 6-part series of lessons and projects to get you started bui
 > 🎥 Click the image above for a video about the series!
 
 ## How-to 
-To use this curriculum on your own, fork the entire repo and go into the numbered folders to access the lessons and projects. This series is designed to take 6 weeks, about 1 week per lesson, but feel free to complete it at your own pace.  
+To use this curriculum on your own, fork the entire repo and go into the numbered folders to access the lessons and projects. This series is designed to take 6 weeks, about 1 week per lesson, but feel free to complete it at your own pace.
 
 ## Lessons 
 |     |                       Lesson Name                       | Learning Objectives                                                                                                                 |                                                         Linked Lesson                                                          | 
@@ -23,7 +23,11 @@ To use this curriculum on your own, fork the entire repo and go into the numbere
 | 05  |                        Blazor                         |                         Learn Blazor and build an interactive Connect Four game                          |                              [Introducing Blazor Web Applications](/5-blazor)                               | 
 | 06  |                        Publish to Azure                         |                        Learn how to publish your project to the cloud☁️                        |                                 [Publish your Web App to Azure](/6-publish)                                  | 
  
- 
+ ## Open in Codespaces
+
+ You can open this repo in GitHub Codespaces without installing anything on your computer.
+
+ [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=dotnet/intro-to-dotnet-web-dev)
 
 ## Help Resources 
 There's a few places you can go for help and more information on the topics covered in this repository.
