@@ -2,6 +2,14 @@
 
 In this C# Crash Course, we'll go over the basics of C# so that you'll be ready to build out exciting web apps! We'll start by going through the key attributes of C#, syntax basics, and introduce you to OOP. In each section, we'll link you to some quick in-browser C# challenges so you can apply these concepts.
 
+If you're completely new to C# and want a more comprehensive learning path, check out our [C# Curriculum](https://aka.ms/selfguidedcsharp). The projects included in that curriculum are listed below. You can open this repository as a Codespace to complete those projects.
+
+|     |                       Lesson                       | Guided Project                                                                                                                 |                                                         Challenge Project                                                          | 
+| :-: | :------------------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------: | 
+| 01  |                     [Write your first code using C#](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-1/)           | [Calculate and print student grades](https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-print-student-grades/) | [Calculate final GPA](https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-final-gpa/) 
+| 02  |                     [Create and run simple C# console applications](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-2/)           | [Develop foreach and if-elseif-else structures to process array data in C#](https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/), [Code]() | [Develop foreach and if-elseif-else structures to process array data in C#](https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/), [Code]()
+| 03  |                     [Add logic to C# console applications](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-3/)           | [Develop conditional branching and looping structures in C#](https://learn.microsoft.com/training/modules/guided-project-develop-conditional-branching-looping/), [Code]() | [Develop branching and looping structures in C#](https://learn.microsoft.com/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/), [Code]()
+
 ## Topics you'll learn
 
 * Language attributes
