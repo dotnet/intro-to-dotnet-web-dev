@@ -52,7 +52,7 @@ First, you need to scaffold a project. You've installed .NET 6 and you're ready 
 1. Create a web API by running `dotnet new`:
 
    ```bash
-   dotnet new web -o PizzaStore
+   dotnet new web -o PizzaStore -f net6.0
    ```
 
    You should see the _PizzaStore_ directory.
@@ -60,6 +60,7 @@ First, you need to scaffold a project. You've installed .NET 6 and you're ready 
 1. Run the app by calling `dotnet run`. It builds the app and hosts it on a port from 5000 to 5300. HTTPS has a port selected for it in the range of 7000 to 7300.
 
    ```bash
+   cd PizzaStore
    dotnet run
    ```
 
