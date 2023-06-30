@@ -1,0 +1,38 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  DOTNET_VERSION: '6.0.x' # The .NET SDK version to use
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+        - 3-razor-pages/0-start/RazorPagesPizza/RazorPagesPizza/RazorPagesPizza.csproj
+        - 3-razor-pages/1-complete/RazorPagesPizza/RazorPagesPizza/RazorPagesPizza.csproj
+        - 4-minimal-api/0-start/PizzaStore/PizzaStore.csproj
+        - 4-minimal-api/1-complete/PizzaStore/PizzaStore.csproj
+        - 5-blazor/0-start/ConnectFour.csproj
+        - 5-blazor/1-complete/ConnectFour/ConnectFour.csproj
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+    - name: Build ${{ matrix.project }}
+      run: dotnet build "${{ matrix.project }}"
