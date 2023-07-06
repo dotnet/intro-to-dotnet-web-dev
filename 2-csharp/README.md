@@ -2,6 +2,8 @@
 
 In this C# Crash Course, we'll go over the basics of C# so that you'll be ready to build out exciting web apps! We'll start by going through the key attributes of C#, syntax basics, and introduce you to OOP. In each section, we'll link you to some quick in-browser C# challenges so you can apply these concepts.
 
+## Curriculum
+
 If you're completely new to C# and want a more comprehensive learning path, check out our [C# Curriculum](https://aka.ms/selfguidedcsharp). The projects included in that curriculum are listed below. You can open this repository as a Codespace to complete those projects.
 
 |     |                       Lesson                       | Guided Project                                                                                                                 |                                                         Challenge Project                                                          |
