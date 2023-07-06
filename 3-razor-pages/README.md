@@ -14,6 +14,15 @@ In Razor Pages applications, you’ll write your logic in a Page Model class, an
 
 ## Installing the tools
 
+You can utilize your editor of choice for this course. Below we've included instructions for GitHub Codespaces and Visual Studio.
+
+### GitHub Codespaces
+
+1. Open a GitHub Codespace. To do this, simply select the green **Code** button. Then click the **+** to create a Codespace on the main branch.
+2. Navigate to the project files in the [0-start/RazorPagesPizza folder](0-start/RazorPagesPizza)
+
+### Visual Studio
+
 We'll be using Visual Studio 2022 for whole course. If you don't have Visual Studio 2022 installed, you can follow the [directions here](/1-welcome/how-to-install-vs.md).
 
 ## Creating a Razor Pages project
