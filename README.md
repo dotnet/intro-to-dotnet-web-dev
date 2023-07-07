@@ -13,6 +13,9 @@ Here, you'll find a 6-part series of lessons and projects to get you started bui
 ## How-to 
 To use this curriculum on your own, fork the entire repo and go into the numbered folders to access the lessons and projects. This series is designed to take 6 weeks, about 1 week per lesson, but feel free to complete it at your own pace.
 
+### Codespace
+You can also complete the lesson from your browser using GitHub Codespaces. To open a Codespace, simply select the green **Code** button. Then click the **+** to create a Codespace on the main branch.
+
 ## Lessons 
 |     |                       Lesson Name                       | Learning Objectives                                                                                                                 |                                                         Linked Lesson                                                          | 
 | :-: | :------------------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------: | 

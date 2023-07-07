@@ -4,6 +4,9 @@ In this Welcome, we’ll introduce ourselves, give you the lesson rundown, take 
 ![.NET bot waving](../images/dotnet-bot.svg)
 
 ## Prerequisite tools
+In this series, you can use your editor of choice or GitHub Codespaces. Here are some options we suggest:
+- [GitHub Codespaces](https://code.visualstudio.com/docs/remote/codespaces) for an in-browser coding environment
+- [Visual Studio Code](https://code.visualstudio.com/), with the [C# Dev Kit Extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
 - [Visual Studio](https://aka.ms/WebLearningSeries-git-vsDownload) or [Visual Studio for Mac](https://aka.ms/WebLearningSeries-git-vsmacDownload) - check out our [more detailed instructions](/1-welcome/how-to-install-vs.md) for extra help 
 - [.NET 6 SDK](https://aka.ms/WebLearningSeries-git-dotnetDownload)
 

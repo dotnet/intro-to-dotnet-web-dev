@@ -30,15 +30,22 @@ We'll accomllish this by writing a classic four-in-a-row "Connect Four" game tha
 
 First, let's scaffold a new project for our game.  With .NET 6 installed, we can start building our application at the command-line.
 
+**GitHub Codespaces Instructions** 
+
+1. Open a GitHub Codespace. To do this, simply select the green **Code** button. Then click the **+** to create a Codespace on the main branch.
+2. Navigate to the project files in the [0-start folder](0-start)
+ 
+**Visual Studio Instructions**
+
 1. Create a new blazor application in Visual Studio 2022 by choosing the "File - New... - Project" menu.
 
-1. Choose a "Blazor WebAssembly App" from the list of templates and name it "ConnectFour".  Click next
+2. Choose a "Blazor WebAssembly App" from the list of templates and name it "ConnectFour".  Click next
 
-1. Choose the .NET 6 framework, Authentication type should be set to "None" and uncheck the "ASP.NET Core hosted" checkbox.
+3. Choose the .NET 6 framework, Authentication type should be set to "None" and uncheck the "ASP.NET Core hosted" checkbox.
 
 	This should create a _ConnectFour_ directory containing our application.
 
-2. Run the app by pressing <kbd>F5</kbd> in Visual Studio 2022.  This builds the app and hosts it on a random port between 5000 and 5300.  HTTPS has a port selected for it in the range of 7000 to 7300.
+4. Run the app by pressing <kbd>F5</kbd> in Visual Studio 2022.  This builds the app and hosts it on a random port between 5000 and 5300.  HTTPS has a port selected for it in the range of 7000 to 7300.
 
 	Your Output Window should report content similar to the following:
 
@@ -56,7 +63,7 @@ First, let's scaffold a new project for our game.  With .NET 6 installed, we can
 		Content root path: C:\dev\ConnectFour
 	```
 
-1. Let's navigate to the address our web server announced it's serving the application at.  You might be able to Ctrl+Click on the address in your terminal, or just copy the address into your browser.  In the above sample, we would navigate to `http://localhost:5136`.  You should be presented with the following welcome screen in your browser:
+5. Let's navigate to the address our web server announced it's serving the application at.  You might be able to Ctrl+Click on the address in your terminal, or just copy the address into your browser.  In the above sample, we would navigate to `http://localhost:5136`.  You should be presented with the following welcome screen in your browser:
 
 	![Screenshot from the new Blazor Template](img/1-NewTemplate.png)
 
