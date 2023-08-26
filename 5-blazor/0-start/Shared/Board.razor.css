@@ -83,31 +83,31 @@ span.container {
     box-shadow: 0 0 0 4px var(--player2);
 }
 
-.col1 {
+.col0 {
     left: calc( 0em + 9px );
 }
 
-.col2 {
+.col1 {
     left: calc( 4em + 9px );
 }
 
-.col3 {
+.col2 {
     left: calc( 8em + 9px );
 }
 
-.col4 {
+.col3 {
     left: calc( 12em + 9px );
 }
 
-.col5 {
+.col4 {
     left: calc( 16em + 9px );
 }
 
-.col6 {
+.col5 {
     left: calc( 20em + 9px );
 }
 
-.col7 {
+.col6 {
     left: calc( 24em + 9px );
 }
 
