@@ -5,16 +5,16 @@ name: .NET Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 env:
-  DOTNET_VERSION: '6.0.x' # The .NET SDK version to use
+  DOTNET_VERSION: '8.0.x' # The .NET SDK version to use
 
 jobs:
   build:
-
+    name: Build All Projects
     runs-on: ubuntu-latest
     
     strategy:
