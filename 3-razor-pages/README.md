@@ -8,7 +8,9 @@ Welcome back! In the last lesson, you got a crash course in C# language fundamen
 
 ## Okay, so what are Razor Pages?
 
-There are a few different kinds of web apps out there. If you’re building highly interactive web apps – like a game or in-browser experience – you would probably want to use Blazor. You’ll learn about that in Week 5. But the huge majority of web sites out there run most of their logic on the server  - think shopping and commerce websites, web sites for small businesses and portfolios, news sites, etc. And that’s what Razor Pages is really good at.
+There are a few different kinds of web apps out there. Many web apps render content and handle requests from the server - think shopping and commerce websites, web sites for small businesses and portfolios, news sites, etc. Other web apps are highly interactive – like a game or in-browser experiences. Razor Pages is a web UI framework for building web apps that run from the server.
+
+> Note: Starting in .NET 8, Blazor is the preferred approach for building web UI with ASP.NET Core. You can use Blazor's rich component model to build both server rendered web apps and interactive client web apps. We'll learn more about Blazor in Week 5.
 
 In Razor Pages applications, you’ll write your logic in a Page Model class, and you’ll write your markup in a Razor file. Razor is a nifty language that blends HTML markup with C# logic, so you can pull in your dynamic information from your Page Model class and display it in Razor. If that sounds complicated, don’t worry, because you’re about to see how easy it is to write a simple Pizza store web app using Razor Pages.  
 
@@ -41,7 +43,7 @@ We'll be using Visual Studio 2022 for whole course. If you don't have Visual Stu
 
 1. Select **Next**.
 
-1. In the **Additional information** dialog, select **.NET 6.0 (Long-term support)** and then select **Create**.
+1. In the **Additional information** dialog, select **.NET 8.0 (Long-term support)** and then select **Create**.
 
    ![Additional information](additional-info.png)
 
