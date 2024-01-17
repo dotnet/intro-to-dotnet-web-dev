@@ -390,7 +390,7 @@ Let's add some error handling and indicators to our board to make the current st
     ```
 
     - The `CurrentTurn` property is automatically calculated based on the state of the `winnerMessage` and the `PlayerTurn` property of the `GameState`.
-    - The `ResetStyle` is calculated based on contents of the `WinnerMessage`. If there's a `winnerMessage`, we make the reset button appear on screen.
+    - The `ResetStyle` is calculated based on contents of the `winnerMessage`. If there's a `winnerMessage`, we make the reset button appear on screen.
 
 1. Let's handle the error message when a piece is played. Add a line to clear the error message and then wrap the code in the `PlayPiece` method with a `try...catch` block to set the `errorMessage` if an exception occurred:
 
