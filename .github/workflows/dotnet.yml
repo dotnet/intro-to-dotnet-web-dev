@@ -25,7 +25,7 @@ jobs:
         - 3-razor-pages/1-complete/RazorPagesPizza/RazorPagesPizza/RazorPagesPizza.csproj
         - 4-minimal-api/0-start/PizzaStore/PizzaStore.csproj
         - 4-minimal-api/1-complete/PizzaStore/PizzaStore.csproj
-        - 5-blazor/0-start/ConnectFour.csproj
+        - 5-blazor/0-start/ConnectFour/ConnectFour.csproj
         - 5-blazor/1-complete/ConnectFour/ConnectFour.csproj
 
     steps:
