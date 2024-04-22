@@ -112,14 +112,13 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
     if (app.Environment.IsDevelopment())
     {
          app.UseDeveloperExceptionPage();
+         app.UseSwagger();
+         app.UseSwaggerUI(c =>
+         {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
+         });
     }
-        
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-       c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
-    });
-        
+   
     app.MapGet("/", () => "Hello World!");
         
     app.Run();
