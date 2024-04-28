@@ -113,7 +113,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
     {
          app.UseDeveloperExceptionPage();
          app.UseSwagger();
-         app.UseSwaggerUI(c =>
+         app.UseSwaggerUI(c => // UseSwaggerUI Protected by if (env.IsDevelopment())
          {
             c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
          });
