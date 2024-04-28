@@ -15,7 +15,7 @@ if (app.Environment.IsDevelopment())
 {
      app.UseDeveloperExceptionPage();
      app.UseSwagger();
-     app.UseSwaggerUI(c =>
+     app.UseSwaggerUI(c =>  // Protected by if (env.IsDevelopment())
      {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
      });
