@@ -113,7 +113,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
     {
          app.UseDeveloperExceptionPage();
          app.UseSwagger();
-         app.UseSwaggerUI(c =>
+         app.UseSwaggerUI(c => // UseSwaggerUI Protected by if (env.IsDevelopment())
          {
             c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
          });
@@ -128,7 +128,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
 
     - The `using` statement at the top makes it easier to use the *Swashbuckle* package without having to type out long namespaces for the commands.
     - The two `builder.Services.Add` lines add the two services that *Swashbuckle* needs to generate the documentation.
-    - The `UseSwagger` and `UseSwaggerUI` lines add the Swagger and Swagger UI endpoints.
+    - The `UseSwagger` and `UseSwaggerUI` lines add the Swagger and Swagger UI endpoints. UseSwaggerUI is called only in development.
 
 1. Rerun the project and go to the app's address, `http://localhost:{PORT}/swagger`.
 
