@@ -19,25 +19,25 @@ namespace RazorPagesPizza.Pages
             _context = context;
         }
 
-      public Pizza Pizza { get; set; } = default!; 
+        public Pizza Pizza { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Pizza == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
             var pizza = await _context.Pizza.FirstOrDefaultAsync(m => m.Id == id);
-            if (pizza == null)
-            {
-                return NotFound();
-            }
-            else 
+
+            if (pizza is not null)
             {
                 Pizza = pizza;
+
+                return Page();
             }
-            return Page();
+
+            return NotFound();
         }
     }
 }

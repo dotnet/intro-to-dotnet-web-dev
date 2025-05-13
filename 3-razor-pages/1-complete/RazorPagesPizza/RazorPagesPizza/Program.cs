@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<RazorPagesPizzaContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesPizzaContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesPizzaContext' not found.")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesPizzaContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesPizzaContext' not found.")));
 
 var app = builder.Build();
 
@@ -19,12 +19,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+app.MapStaticAssets();
+app.MapRazorPages()
+   .WithStaticAssets();
 
 app.Run();

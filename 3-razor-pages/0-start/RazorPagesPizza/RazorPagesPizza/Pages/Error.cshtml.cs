@@ -1,6 +1,6 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Diagnostics;
 
 namespace RazorPagesPizza.Pages
 {
@@ -24,4 +24,5 @@ namespace RazorPagesPizza.Pages
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }
+
 }

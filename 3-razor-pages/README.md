@@ -10,7 +10,7 @@ Welcome back! In the last lesson, you got a crash course in C# language fundamen
 
 There are a few different kinds of web apps out there. Many web apps render content and handle requests from the server - think shopping and commerce websites, web sites for small businesses and portfolios, news sites, etc. Other web apps are highly interactive – like a game or in-browser experiences. Razor Pages is a web UI framework for building web apps that run from the server.
 
-> Note: Starting in .NET 8, Blazor is the preferred approach for building web UI with ASP.NET Core. You can use Blazor's rich component model to build both server rendered web apps and interactive client web apps. We'll learn more about Blazor in Week 5.
+> Note: Starting in .NET 9, Blazor is the preferred approach for building web UI with ASP.NET Core. You can use Blazor's rich component model to build both server rendered web apps and interactive client web apps. We'll learn more about Blazor in Week 5.
 
 In Razor Pages applications, you’ll write your logic in a Page Model class, and you’ll write your markup in a Razor file. Razor is a nifty language that blends HTML markup with C# logic, so you can pull in your dynamic information from your Page Model class and display it in Razor. If that sounds complicated, don’t worry, because you’re about to see how easy it is to write a simple Pizza store web app using Razor Pages.  
 
@@ -43,7 +43,7 @@ We'll be using Visual Studio 2022 for whole course. If you don't have Visual Stu
 
 1. Select **Next**.
 
-1. In the **Additional information** dialog, select **.NET 8.0 (Long-term support)** and then select **Create**.
+1. In the **Additional information** dialog, select **.NET 9.0** and then select **Create**.
 
    ![Additional information](additional-info.png)
 
@@ -230,7 +230,7 @@ Update-Database
 
 ## Running the web app
 
-From the **Build** menu, select **Start Debugging**. A console window will open to display debug output, and your browser will open to the web application's URL. It will be something like https://localhost:7242/, where the 7242 is a free port number on your machine.
+From the **Build** menu, select **Start Debugging**. A console window will open to display debug output, and your browser will open to the web application's URL. It will be something like <https://localhost:7242/>, where the 7242 is a free port number on your machine.
 
 You've got a running web application that you built! Let's try it out.
 

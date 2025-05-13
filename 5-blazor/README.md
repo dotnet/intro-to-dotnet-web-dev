@@ -29,7 +29,7 @@ We accomplish the above goals by writing a classic four-in-a-row "Connect Four" 
 
 First, let's scaffold a new project for our game.
 
-**GitHub Codespaces Instructions** 
+**GitHub Codespaces Instructions**
 
 1. Open a GitHub Codespace. To do this, simply select the green **Code** button. Then click the **+** to create a Codespace on the main branch.
 2. Navigate to the project files in the [0-start folder](0-start)
@@ -40,7 +40,7 @@ First, let's scaffold a new project for our game.
 
 1. Choose "Blazor Web App" from the list of templates and name it "ConnectFour". Select **Next**.
 
-1. Choose .NET 8 for the framework version. The Authentication type should be set to **None**, Interactive render mode should be set to **Server**, and Interactivity location should be set to **Per page/component**. Leave all other options as the defaults.
+1. Choose .NET 9 for the framework version. The Authentication type should be set to **None**, Interactive render mode should be set to **Server**, and Interactivity location should be set to **Per page/component**. Leave all other options as the defaults.
 
     This action should create a ConnectFour directory containing our app.
 
