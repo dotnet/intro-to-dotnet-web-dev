@@ -88,7 +88,15 @@ Congratulations! You've created an API by using a minimal API template.
 
 Use Swagger to ensure that you have a self-documenting API, where the docs change when you change the code. This also builds a really convenient web interface for your API, so you can test out the application as you build it.
 
-1. In .NET 9, Swagger support is built in for minimal APIs! Update your _Program.cs_ file with the following code:
+1. First, add the required Swagger packages to your project:
+
+    ```bash
+    cd PizzaStore
+    dotnet add package Swashbuckle.AspNetCore
+    dotnet add package Microsoft.AspNetCore.OpenApi
+    ```
+
+2. Now update your _Program.cs_ file with the following code:
 
     ```csharp
     using Microsoft.OpenApi.Models;
@@ -104,12 +112,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
         {
             Title = "PizzaStore API",
             Description = "Making the Pizzas you love",
-            Version = "v1",
-            Contact = new OpenApiContact
-            {
-                Name = "Pizza Support",
-                Email = "pizza@example.com"
-            }
+            Version = "v1"
         });
     });
     
@@ -119,11 +122,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
-        app.UseSwaggerUI(options =>
-        {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-            options.RoutePrefix = "swagger";
-        });
+        app.UseSwaggerUI();
     }
     
     app.MapGet("/", () => "Hello World!");
@@ -137,6 +136,10 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
     - Adds the `AddSwaggerGen` service to generate the OpenAPI specification for your API
     - Configures Swagger UI which provides an interactive UI for testing your API endpoints
 
+    - Adds the `AddEndpointsApiExplorer` service which is required for Swagger to discover and generate documentation for your API endpoints
+    - Adds the `AddSwaggerGen` service to generate the OpenAPI specification for your API
+    - Configures Swagger UI which provides an interactive UI for testing your API endpoints
+
 1. Rerun the project and go to the app's address, `http://localhost:{PORT}/swagger`.
 
    You should see the following output:
@@ -145,20 +148,23 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
 
 ### Add a Pizza model and service
 
-First you need some data. To store and manage data, you'll use an in-memory store. For this example, we're just going to use a simple list of pizzas. Don't worry too much about this pizza service, it's just a quick example that holds a list of pizzas so we our API has some data to work with.
+First you need some data. To store and manage data, you'll use an in-memory store. For this example, we're just going to use a simple list of pizzas.
 
-1. Create the file _Db.cs_ and give it the following content:
+1. Create the file _Db.cs_ in your project directory and give it the following content:
 
    ```csharp
+    using System.Collections.Generic;
+    using System.Linq;
+
     namespace PizzaStore.DB; 
 
     public record Pizza 
     {
-      public int Id {get; set;} 
-      public string ? Name { get; set; }
+      public int Id { get; set; } 
+      public string? Name { get; set; }
     }
 
-    public class PizzaDB
+    public static class PizzaDB
     {
       private static List<Pizza> _pizzas = new List<Pizza>()
       {
@@ -172,7 +178,7 @@ First you need some data. To store and manage data, you'll use an in-memory stor
         return _pizzas;
       } 
 
-      public static Pizza ? GetPizza(int id) 
+      public static Pizza? GetPizza(int id) 
       {
         return _pizzas.SingleOrDefault(pizza => pizza.Id == id);
       } 
@@ -215,9 +221,10 @@ To connect your in-memory store to the API:
 
 Now, connect data in your API.
 
-1. At the top of the _Program.cs_ file, add the following line of code:
+1. At the top of the _Program.cs_ file, add the following line of code alongside the existing using statement:
 
    ```csharp
+   using Microsoft.OpenApi.Models;
    using PizzaStore.DB;
    ```
 
