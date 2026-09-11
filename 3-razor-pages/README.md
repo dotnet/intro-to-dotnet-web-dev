@@ -120,7 +120,7 @@ using Microsoft.EntityFrameworkCore;
 using RazorPagesPizza.Data;
 using RazorPagesPizza.Models;
 
-namespace RazorPagesPizza
+namespace RazorPagesPizza.Pages
 {
     public class IndexModel : PageModel
     {
@@ -164,7 +164,7 @@ You'll see below that we're transitioning between C# and HTML - starting with so
 
 ```csharp
 @page
-@model RazorPagesPizza.IndexModel
+@model RazorPagesPizza.Pages.IndexModel
 
 @{
     ViewData["Title"] = "Index";

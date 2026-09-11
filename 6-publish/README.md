@@ -28,7 +28,7 @@ Otherwise, you can still create a free Azure account by following these directio
 
 
 ## Let's publish!
-You can also find these instructions in the [Azure documentation](https://docs.microsoft.com/azure/app-service/quickstart-dotnetcore?tabs=net60&pivots=development-environment-vs).
+You can also find these instructions in the [Azure documentation](https://learn.microsoft.com/azure/app-service/quickstart-dotnetcore?pivots=platform-windows).
 
 1. Choose the web application you'd like to publish! It can be any of the projects that you created in emails 3, 4, or 5. Open up this project in Visual Studio. 
 2. In **Solution Explorer**, right-click your ASP.NET Core project and select **Publish**.
