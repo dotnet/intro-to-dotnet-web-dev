@@ -43,7 +43,7 @@ We'll be using Visual Studio 2022 for whole course. If you don't have Visual Stu
 
 1. Select **Next**.
 
-1. In the **Additional information** dialog, select **.NET 9.0** and then select **Create**.
+1. In the **Additional information** dialog, select **.NET 10.0** and then select **Create**.
 
    ![Additional information](additional-info.png)
 

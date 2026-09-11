@@ -40,7 +40,7 @@ First, let's scaffold a new project for our game.
 
 1. Choose "Blazor Web App" from the list of templates and name it "ConnectFour". Select **Next**.
 
-1. Choose .NET 9 for the framework version. The Authentication type should be set to **None**, Interactive render mode should be set to **Server**, and Interactivity location should be set to **Per page/component**. Leave all other options as the defaults.
+1. Choose .NET 10 for the framework version. The Authentication type should be set to **None**, Interactive render mode should be set to **Server**, and Interactivity location should be set to **Per page/component**. Leave all other options as the defaults.
 
     This action should create a ConnectFour directory containing our app.
 

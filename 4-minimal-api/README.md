@@ -47,12 +47,12 @@ This endpoint accepts a pizza JSON object, turns it into C#, and passes it to a 
 
 ### Create a new Minimal API project
 
-First, you need to scaffold a project. You've installed .NET 9 and you're ready to go.
+First, you need to scaffold a project. You've installed .NET 10 and you're ready to go.
 
 1. Create a web API by running `dotnet new`:
 
    ```bash
-   dotnet new web -o PizzaStore -f net9.0
+   dotnet new web -o PizzaStore -f net10.0
    ```
 
    You should see the _PizzaStore_ directory.
@@ -271,7 +271,7 @@ Now, connect data in your API.
          });
    ```
 
-   This is the actual API part of the application! In .NET 9, we're improving the OpenAPI documentation by:
+   This is the actual API part of the application! In .NET 10, we're improving the OpenAPI documentation by:
    
    - Using `.WithTags()` to organize endpoints in the Swagger UI
    - Adding `.WithSummary()` and `.WithDescription()` to provide clear documentation
@@ -298,7 +298,7 @@ Now, connect data in your API.
 
 ## What's next?
 
-This is a quick first look at building a backend with Minimal APIs in .NET 9. To learn more about the latest features in Minimal APIs and OpenAPI support, check out the [.NET 9 minimal API documentation](https://learn.microsoft.com/aspnet/core/fundamentals/minimal-apis) and [OpenAPI documents in ASP.NET Core](https://learn.microsoft.com/aspnet/core/fundamentals/openapi/using-openapi-documents).
+This is a quick first look at building a backend with Minimal APIs in .NET 10. To learn more about the latest features in Minimal APIs and OpenAPI support, check out the [.NET 10 minimal API documentation](https://learn.microsoft.com/aspnet/core/fundamentals/minimal-apis) and [OpenAPI documents in ASP.NET Core](https://learn.microsoft.com/aspnet/core/fundamentals/openapi/using-openapi-documents).
 
 In the next lesson, you'll learn about building a game with Blazor! Stay tuned!
 
