@@ -11,14 +11,15 @@ using RazorPagesPizza.Data;
 namespace RazorPagesPizza.Migrations
 {
     [DbContext(typeof(RazorPagesPizzaContext))]
-    [Migration("20230630173639_InitialCreate")]
+    [Migration("20250513040251_InitialCreate")]
     partial class InitialCreate
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.18")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);

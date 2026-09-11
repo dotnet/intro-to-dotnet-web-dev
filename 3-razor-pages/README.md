@@ -43,7 +43,7 @@ We'll be using Visual Studio 2022 for whole course. If you don't have Visual Stu
 
 1. Select **Next**.
 
-1. In the **Additional information** dialog, select **.NET 8.0 (Long-term support)** and then select **Create**.
+1. In the **Additional information** dialog, select **.NET 9.0** and then select **Create**.
 
    ![Additional information](additional-info.png)
 
@@ -230,7 +230,7 @@ Update-Database
 
 ## Running the web app
 
-From the **Build** menu, select **Start Debugging**. A console window will open to display debug output, and your browser will open to the web application's URL. It will be something like https://localhost:7242/, where the 7242 is a free port number on your machine.
+From the **Build** menu, select **Start Debugging**. A console window will open to display debug output, and your browser will open to the web application's URL. It will be something like <https://localhost:7242/>, where the 7242 is a free port number on your machine.
 
 You've got a running web application that you built! Let's try it out.
 

@@ -23,10 +23,7 @@ namespace RazorPagesPizza.Pages
 
         public async Task OnGetAsync()
         {
-            if (_context.Pizza != null)
-            {
-                Pizza = await _context.Pizza.ToListAsync();
-            }
+            Pizza = await _context.Pizza.ToListAsync();
         }
     }
 }

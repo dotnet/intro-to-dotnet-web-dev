@@ -20,7 +20,7 @@ Because these things are so common, the web was designed with standard commands 
 
 To avoid reinventing things over and over, we use some common standards for HTTP APIs. We’ve already talked about HTTP, which handles the commands and communication between clients and servers. Another important thing for HTTP APIs to do in a predictable way is to send data back and forth. The most common way to package up data now is called JSON, short for JavaScript Object Notation. It’s a neat, simple format for packaging up data, but programmers don’t want to spend time converting their information back and forth between properties and classes in their programming language  and JSON. This conversion process is called serialization, and fortunately ASP.NET Core can do that for you automatically.
 
-### Welcome to the internet...
+### Welcome to the internet
 
 Another important thing to think about for server exposed to the public internet is security and authorization. Some HTTP APIs require authentication, so only clients with the right credentials can access them. Even public HTTP APIs need to handle security, to manage things like denial of service attacks and exploiting the public APIs to take over the server or get access to information they shouldn’t have. Fortunately, ASP.NET Core can handle things like this for us, too.
 
@@ -47,12 +47,12 @@ This endpoint accepts a pizza JSON object, turns it into C#, and passes it to a 
 
 ### Create a new Minimal API project
 
-First, you need to scaffold a project. You've installed .NET 6 and you're ready to go.
+First, you need to scaffold a project. You've installed .NET 9 and you're ready to go.
 
 1. Create a web API by running `dotnet new`:
 
    ```bash
-   dotnet new web -o PizzaStore -f net6.0
+   dotnet new web -o PizzaStore -f net9.0
    ```
 
    You should see the _PizzaStore_ directory.
@@ -88,47 +88,53 @@ Congratulations! You've created an API by using a minimal API template.
 
 Use Swagger to ensure that you have a self-documenting API, where the docs change when you change the code. This also builds a really convenient web interface for your API, so you can test out the application as you build it.
 
-1. Install the *Swashbuckle* package:
+1. First, add the required Swagger packages to your project:
 
     ```bash
+    cd PizzaStore
     dotnet add package Swashbuckle.AspNetCore
+    dotnet add package Microsoft.AspNetCore.OpenApi
     ```
 
-1. Next, configure your project to use Swagger. Open _Program.cs_ and add replace it with the following code:
+2. Now update your _Program.cs_ file with the following code:
 
     ```csharp
     using Microsoft.OpenApi.Models;
     
     var builder = WebApplication.CreateBuilder(args);
-        
+    
+    // Add services to the container
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen(c =>
+    builder.Services.AddSwaggerGen(options =>
     {
-         c.SwaggerDoc("v1", new OpenApiInfo { Title = "PizzaStore API", Description = "Making the Pizzas you love", Version = "v1" });
+        options.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Title = "PizzaStore API",
+            Description = "Making the Pizzas you love",
+            Version = "v1"
+        });
     });
-        
+    
     var app = builder.Build();
-        
+    
+    // Configure the HTTP request pipeline
     if (app.Environment.IsDevelopment())
     {
-         app.UseDeveloperExceptionPage();
-         app.UseSwagger();
-         app.UseSwaggerUI(c => // UseSwaggerUI Protected by if (env.IsDevelopment())
-         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
-         });
+        app.UseSwagger();
+        app.UseSwaggerUI();
     }
-   
+    
     app.MapGet("/", () => "Hello World!");
-        
+    
     app.Run();
     ```
 
-    This is actually just adding a few lines of code:
+    This code:
 
-    - The `using` statement at the top makes it easier to use the *Swashbuckle* package without having to type out long namespaces for the commands.
-    - The two `builder.Services.Add` lines add the two services that *Swashbuckle* needs to generate the documentation.
-    - The `UseSwagger` and `UseSwaggerUI` lines add the Swagger and Swagger UI endpoints. UseSwaggerUI is called only in development.
+    - Adds the `AddEndpointsApiExplorer` service which is required for Swagger to discover and generate documentation for your API endpoints
+    - Adds the `AddSwaggerGen` service to generate the OpenAPI specification for your API
+    - Configures Swagger UI which provides an interactive UI for testing your API endpoints
 
 1. Rerun the project and go to the app's address, `http://localhost:{PORT}/swagger`.
 
@@ -138,20 +144,23 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
 
 ### Add a Pizza model and service
 
-First you need some data. To store and manage data, you'll use an in-memory store. For this example, we're just going to use a simple list of pizzas. Don't worry too much about this pizza service, it's just a quick example that holds a list of pizzas so we our API has some data to work with.
+First you need some data. To store and manage data, you'll use an in-memory store. For this example, we're just going to use a simple list of pizzas.
 
-1. Create the file _Db.cs_ and give it the following content:
+1. Create the file _Db.cs_ in your project directory and give it the following content:
 
    ```csharp
+    using System.Collections.Generic;
+    using System.Linq;
+
     namespace PizzaStore.DB; 
 
     public record Pizza 
     {
-      public int Id {get; set;} 
-      public string ? Name { get; set; }
+      public int Id { get; set; } 
+      public string? Name { get; set; }
     }
 
-    public class PizzaDB
+    public static class PizzaDB
     {
       private static List<Pizza> _pizzas = new List<Pizza>()
       {
@@ -165,7 +174,7 @@ First you need some data. To store and manage data, you'll use an in-memory stor
         return _pizzas;
       } 
 
-      public static Pizza ? GetPizza(int id) 
+      public static Pizza? GetPizza(int id) 
       {
         return _pizzas.SingleOrDefault(pizza => pizza.Id == id);
       } 
@@ -208,23 +217,66 @@ To connect your in-memory store to the API:
 
 Now, connect data in your API.
 
-1. At the top of the _Program.cs_ file, add the following line of code:
+1. At the top of the _Program.cs_ file, add the following line of code alongside the existing using statement:
 
    ```csharp
+   using Microsoft.OpenApi.Models;
    using PizzaStore.DB;
    ```
 
 1. Just before `app.Run()`, add the following code:
 
    ```csharp
-   app.MapGet("/pizzas/{id}", (int id) => PizzaDB.GetPizza(id));
-   app.MapGet("/pizzas", () => PizzaDB.GetPizzas());
-   app.MapPost("/pizzas", (Pizza pizza) => PizzaDB.CreatePizza(pizza));
-   app.MapPut("/pizzas", (Pizza pizza) => PizzaDB.UpdatePizza(pizza));
-   app.MapDelete("/pizzas/{id}", (int id) => PizzaDB.RemovePizza(id));
+   // Define API endpoints with OpenAPI descriptions
+   var pizzas = app.MapGroup("/pizzas")
+       .WithTags("Pizzas")
+       .WithOpenApi();
+   
+   // Get all pizzas
+   pizzas.MapGet("/", () => PizzaDB.GetPizzas())
+         .WithName("GetAllPizzas")
+         .WithSummary("Get all pizzas")
+         .WithDescription("Retrieves the complete list of available pizzas");
+   
+   // Get pizza by ID
+   pizzas.MapGet("/{id}", (int id) => PizzaDB.GetPizza(id))
+         .WithName("GetPizzaById")
+         .WithSummary("Get pizza by ID")
+         .WithDescription("Gets a specific pizza by its unique identifier")
+         .WithOpenApi(operation => {
+             operation.Parameters[0].Description = "The unique identifier for the pizza";
+             return operation;
+         });
+   
+   // Create a new pizza
+   pizzas.MapPost("/", (Pizza pizza) => PizzaDB.CreatePizza(pizza))
+         .WithName("CreatePizza")
+         .WithSummary("Create a new pizza")
+         .WithDescription("Adds a new pizza to the menu");
+   
+   // Update a pizza
+   pizzas.MapPut("/", (Pizza pizza) => PizzaDB.UpdatePizza(pizza))
+         .WithName("UpdatePizza")
+         .WithSummary("Update an existing pizza")
+         .WithDescription("Updates the details of an existing pizza");
+   
+   // Delete a pizza
+   pizzas.MapDelete("/{id}", (int id) => PizzaDB.RemovePizza(id))
+         .WithName("DeletePizza")
+         .WithSummary("Delete a pizza")
+         .WithDescription("Removes a pizza from the menu")
+         .WithOpenApi(operation => {
+             operation.Parameters[0].Description = "The unique identifier for the pizza to delete";
+             return operation;
+         });
    ```
 
-    This is the actual API part of the application! As you can see, there's not a lot of code. We're just mapping the routes to code that calls into our in-memory store.
+   This is the actual API part of the application! In .NET 9, we're improving the OpenAPI documentation by:
+   
+   - Using `.WithTags()` to organize endpoints in the Swagger UI
+   - Adding `.WithSummary()` and `.WithDescription()` to provide clear documentation
+   - Using the advanced `.WithOpenApi()` overload to customize parameter descriptions
+   - Organizing routes with `MapGroup()` for cleaner code
 
 1. Run the app by using `dotnet run`:
 
@@ -232,17 +284,21 @@ Now, connect data in your API.
    dotnet run
    ```
 
-1. In your browser, go to `http://localhost:{PORT}/swagger`.
-
-   You should see the following page rendering:
+1. In your browser, go to `http://localhost:{PORT}/swagger`.   You should see the following page rendering:
 
     ![Swagger](swagger-crud.png)
 
-    What's great about this Swagger UI is that you can use it to test out the API. Click on any of the API endpoints to expand it, and click the `Try it out` button. You'll see a form that makes it easy to try submitting requests to the API and seeing the response.
+    What's great about this Swagger UI is that you can:
+    
+    - Browse all available endpoints organized by tags
+    - See detailed documentation including summaries and descriptions
+    - Expand any endpoint to see request parameters and response types
+    - Try out the API directly with the "Try it out" button
+    - Execute requests and see the actual responses without leaving the browser
 
 ## What's next?
 
-This is a quick first look at building a backend with Minimal APIs. To go through this same example in more detail, and with more explanation, check out the [Minimal API learning path on Microsoft Learn](https://docs.microsoft.com/learn/paths/aspnet-core-minimal-api/)!
+This is a quick first look at building a backend with Minimal APIs in .NET 9. To learn more about the latest features in Minimal APIs and OpenAPI support, check out the [.NET 9 minimal API documentation](https://learn.microsoft.com/aspnet/core/fundamentals/minimal-apis) and [OpenAPI documents in ASP.NET Core](https://learn.microsoft.com/aspnet/core/fundamentals/openapi/using-openapi-documents).
 
 In the next lesson, you'll learn about building a game with Blazor! Stay tuned!
 

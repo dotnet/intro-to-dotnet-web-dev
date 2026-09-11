@@ -15,16 +15,19 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Pizza.Id" />
             <div class="form-group">
+                <span class="text-danger" aria-hidden="true">*</span>
                 <label asp-for="Pizza.Name" class="control-label"></label>
-                <input asp-for="Pizza.Name" class="form-control" />
+                <input asp-for="Pizza.Name" class="form-control" aria-required="true" />
                 <span asp-validation-for="Pizza.Name" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
+                
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Pizza.IsGlutenFree" /> @Html.DisplayNameFor(model => model.Pizza.IsGlutenFree)
                 </label>
             </div>
             <div class="form-group">
+                
                 <label asp-for="Pizza.Price" class="control-label"></label>
                 <input asp-for="Pizza.Price" class="form-control" />
                 <span asp-validation-for="Pizza.Price" class="text-danger"></span>
