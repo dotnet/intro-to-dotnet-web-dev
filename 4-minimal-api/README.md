@@ -136,10 +136,6 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
     - Adds the `AddSwaggerGen` service to generate the OpenAPI specification for your API
     - Configures Swagger UI which provides an interactive UI for testing your API endpoints
 
-    - Adds the `AddEndpointsApiExplorer` service which is required for Swagger to discover and generate documentation for your API endpoints
-    - Adds the `AddSwaggerGen` service to generate the OpenAPI specification for your API
-    - Configures Swagger UI which provides an interactive UI for testing your API endpoints
-
 1. Rerun the project and go to the app's address, `http://localhost:{PORT}/swagger`.
 
    You should see the following output:
