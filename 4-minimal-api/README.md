@@ -92,8 +92,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
 
     ```bash
     cd PizzaStore
-    dotnet add package Swashbuckle.AspNetCore
-    dotnet add package Microsoft.AspNetCore.OpenApi
+    dotnet add package Swashbuckle.AspNetCore --version 10.2.3
     ```
 
 2. Now update your _Program.cs_ file with the following code:
@@ -132,7 +131,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
 
     This code:
 
-    - Adds the `AddEndpointsApiExplorer` service which is required for Swagger to discover and generate documentation for your API endpoints
+    - Adds the `AddEndpointsApiExplorer` service so Swagger can discover the Minimal API endpoints
     - Adds the `AddSwaggerGen` service to generate the OpenAPI specification for your API
     - Configures Swagger UI which provides an interactive UI for testing your API endpoints
 
@@ -263,7 +262,7 @@ Now, connect data in your API.
          .WithDescription("Removes a pizza from the menu");
    ```
 
-   This is the actual API part of the application! In .NET 10, we're improving the OpenAPI documentation by:
+   This is the actual API part of the application! The endpoint metadata improves the generated OpenAPI documentation by:
    
    - Using `.WithTags()` to organize endpoints in the Swagger UI
    - Adding `.WithSummary()` and `.WithDescription()` to provide clear documentation

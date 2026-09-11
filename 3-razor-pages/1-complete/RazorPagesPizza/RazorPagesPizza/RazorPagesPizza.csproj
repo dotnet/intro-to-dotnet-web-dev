@@ -13,8 +13,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2" />
-    <PackageReference Include="NuGet.Packaging" Version="6.12.5" PrivateAssets="all" />
-    <PackageReference Include="NuGet.Protocol" Version="6.12.5" PrivateAssets="all" />
+    <!-- Override vulnerable transitive dependencies used only by the scaffolding tool. -->
+    <PackageReference Include="NuGet.Packaging" Version="7.9.0" PrivateAssets="all" />
+    <PackageReference Include="NuGet.Protocol" Version="7.9.0" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
