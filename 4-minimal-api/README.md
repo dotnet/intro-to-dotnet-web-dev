@@ -47,12 +47,12 @@ This endpoint accepts a pizza JSON object, turns it into C#, and passes it to a 
 
 ### Create a new Minimal API project
 
-First, you need to scaffold a project. You've installed .NET 9 and you're ready to go.
+First, you need to scaffold a project. You've installed .NET 10 and you're ready to go.
 
 1. Create a web API by running `dotnet new`:
 
    ```bash
-   dotnet new web -o PizzaStore -f net9.0
+   dotnet new web -o PizzaStore -f net10.0
    ```
 
    You should see the _PizzaStore_ directory.
@@ -92,14 +92,13 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
 
     ```bash
     cd PizzaStore
-    dotnet add package Swashbuckle.AspNetCore
-    dotnet add package Microsoft.AspNetCore.OpenApi
+    dotnet add package Swashbuckle.AspNetCore --version 10.2.3
     ```
 
 2. Now update your _Program.cs_ file with the following code:
 
     ```csharp
-    using Microsoft.OpenApi.Models;
+    using Microsoft.OpenApi;
     
     var builder = WebApplication.CreateBuilder(args);
     
@@ -132,7 +131,7 @@ Use Swagger to ensure that you have a self-documenting API, where the docs chang
 
     This code:
 
-    - Adds the `AddEndpointsApiExplorer` service which is required for Swagger to discover and generate documentation for your API endpoints
+    - Adds the `AddEndpointsApiExplorer` service so Swagger can discover the Minimal API endpoints
     - Adds the `AddSwaggerGen` service to generate the OpenAPI specification for your API
     - Configures Swagger UI which provides an interactive UI for testing your API endpoints
 
@@ -220,7 +219,8 @@ Now, connect data in your API.
 1. At the top of the _Program.cs_ file, add the following line of code alongside the existing using statement:
 
    ```csharp
-   using Microsoft.OpenApi.Models;
+   using System.ComponentModel;
+   using Microsoft.OpenApi;
    using PizzaStore.DB;
    ```
 
@@ -229,8 +229,7 @@ Now, connect data in your API.
    ```csharp
    // Define API endpoints with OpenAPI descriptions
    var pizzas = app.MapGroup("/pizzas")
-       .WithTags("Pizzas")
-       .WithOpenApi();
+       .WithTags("Pizzas");
    
    // Get all pizzas
    pizzas.MapGet("/", () => PizzaDB.GetPizzas())
@@ -239,14 +238,10 @@ Now, connect data in your API.
          .WithDescription("Retrieves the complete list of available pizzas");
    
    // Get pizza by ID
-   pizzas.MapGet("/{id}", (int id) => PizzaDB.GetPizza(id))
+   pizzas.MapGet("/{id}", ([Description("The unique identifier for the pizza")] int id) => PizzaDB.GetPizza(id))
          .WithName("GetPizzaById")
          .WithSummary("Get pizza by ID")
-         .WithDescription("Gets a specific pizza by its unique identifier")
-         .WithOpenApi(operation => {
-             operation.Parameters[0].Description = "The unique identifier for the pizza";
-             return operation;
-         });
+         .WithDescription("Gets a specific pizza by its unique identifier");
    
    // Create a new pizza
    pizzas.MapPost("/", (Pizza pizza) => PizzaDB.CreatePizza(pizza))
@@ -261,21 +256,17 @@ Now, connect data in your API.
          .WithDescription("Updates the details of an existing pizza");
    
    // Delete a pizza
-   pizzas.MapDelete("/{id}", (int id) => PizzaDB.RemovePizza(id))
+   pizzas.MapDelete("/{id}", ([Description("The unique identifier for the pizza to delete")] int id) => PizzaDB.RemovePizza(id))
          .WithName("DeletePizza")
          .WithSummary("Delete a pizza")
-         .WithDescription("Removes a pizza from the menu")
-         .WithOpenApi(operation => {
-             operation.Parameters[0].Description = "The unique identifier for the pizza to delete";
-             return operation;
-         });
+         .WithDescription("Removes a pizza from the menu");
    ```
 
-   This is the actual API part of the application! In .NET 9, we're improving the OpenAPI documentation by:
+   This is the actual API part of the application! The endpoint metadata improves the generated OpenAPI documentation by:
    
    - Using `.WithTags()` to organize endpoints in the Swagger UI
    - Adding `.WithSummary()` and `.WithDescription()` to provide clear documentation
-   - Using the advanced `.WithOpenApi()` overload to customize parameter descriptions
+   - Using the `[Description]` attribute to document endpoint parameters
    - Organizing routes with `MapGroup()` for cleaner code
 
 1. Run the app by using `dotnet run`:
@@ -298,7 +289,7 @@ Now, connect data in your API.
 
 ## What's next?
 
-This is a quick first look at building a backend with Minimal APIs in .NET 9. To learn more about the latest features in Minimal APIs and OpenAPI support, check out the [.NET 9 minimal API documentation](https://learn.microsoft.com/aspnet/core/fundamentals/minimal-apis) and [OpenAPI documents in ASP.NET Core](https://learn.microsoft.com/aspnet/core/fundamentals/openapi/using-openapi-documents).
+This is a quick first look at building a backend with Minimal APIs in .NET 10. To learn more about the latest features in Minimal APIs and OpenAPI support, check out the [.NET 10 minimal API documentation](https://learn.microsoft.com/aspnet/core/fundamentals/minimal-apis) and [OpenAPI documents in ASP.NET Core](https://learn.microsoft.com/aspnet/core/fundamentals/openapi/using-openapi-documents).
 
 In the next lesson, you'll learn about building a game with Blazor! Stay tuned!
 

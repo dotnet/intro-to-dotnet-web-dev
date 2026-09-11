@@ -40,7 +40,7 @@ First, let's scaffold a new project for our game.
 
 1. Choose "Blazor Web App" from the list of templates and name it "ConnectFour". Select **Next**.
 
-1. Choose .NET 9 for the framework version. The Authentication type should be set to **None**, Interactive render mode should be set to **Server**, and Interactivity location should be set to **Per page/component**. Leave all other options as the defaults.
+1. Choose .NET 10 for the framework version. The Authentication type should be set to **None**, Interactive render mode should be set to **Server**, and Interactivity location should be set to **Per page/component**. Leave all other options as the defaults.
 
     This action should create a ConnectFour directory containing our app.
 
@@ -68,7 +68,7 @@ Next, let's create a game board component to be used by players in our game. The
     }
     ```
 
-1. Prepare the `Home` page by opening the *Components/Pages/Home.razor* file and clearing out everything after the third line with the `PageTitle`` tag.
+1. Prepare the `Home` page by opening the *Components/Pages/Home.razor* file and clearing out everything after the third line with the `PageTitle` tag.
 
     ```razor
     @page "/"
@@ -114,7 +114,7 @@ Blazor components contain all of the HTML and markup needed to be rendered in a 
           }
        </div>
     </div>
-    `````
+    ```
 
 When we save the board component, our app refreshes and it appears as an empty page, thanks to the Hot Reload functionality that rebuilds and launches the updated app.
 
@@ -151,7 +151,7 @@ Next, we'll add a completed stylesheet for the game to the `Board` component.
     div{position:relative}nav{top:4em;width:30em;display:inline-flex;flex-direction:row;margin-left:10px}nav span{width:4em;text-align:center;cursor:pointer;font-size:1em}div.board{margin-top:1em;flex-wrap:wrap;width:30em;height:24em;overflow:hidden;display:inline-flex;flex-direction:row;flex-wrap:wrap;z-index:-5;row-gap:0;pointer-events:none;border-left:10px solid var(--board-bg)}span.container{width:4em;height:4em;margin:0;padding:4px;overflow:hidden;background-color:transparent;position:relative;z-index:-2;pointer-events:none}.container span{width:3.5em;height:3.5em;border-radius:50%;box-shadow:0 0 0 3em var(--board-bg);left:0;position:absolute;display:block;z-index:5;pointer-events:none}.player1,.player2{width:3.5em;height:3.5em;border-radius:50%;left:0;top:0;position:absolute;display:block;z-index:-8}.player1{background-color:var(--player1);animation-timing-function:cubic-bezier(.5,.05,1,.5);animation-iteration-count:1;animation-fill-mode:forwards;box-shadow:0 0 0 4px var(--player1)}.player2{background-color:var(--player2);animation-timing-function:cubic-bezier(.5,.05,1,.5);animation-iteration-count:1;animation-fill-mode:forwards;box-shadow:0 0 0 4px var(--player2)}.col0{left:calc(0em + 9px)}.col1{left:calc(4em + 9px)}.col2{left:calc(8em + 9px)}.col3{left:calc(12em + 9px)}.col4{left:calc(16em + 9px)}.col5{left:calc(20em + 9px)}.col6{left:calc(24em + 9px)}.drop1{animation-duration:1s;animation-name:drop1}.drop2{animation-duration:1.5s;animation-name:drop2}.drop3{animation-duration:1.6s;animation-name:drop3}.drop4{animation-duration:1.7s;animation-name:drop4}.drop5{animation-duration:1.8s;animation-name:drop5}.drop6{animation-duration:1.9s;animation-name:drop6}@keyframes drop1{100%,75%,90%,97%{transform:translateY(1.27em)}80%{transform:translateY(.4em)}95%{transform:translateY(.8em)}99%{transform:translateY(1em)}}@keyframes drop2{100%,75%,90%,97%{transform:translateY(5.27em)}80%{transform:translateY(3.8em)}95%{transform:translateY(4.6em)}99%{transform:translateY(4.9em)}}@keyframes drop3{100%,75%,90%,97%{transform:translateY(9.27em)}80%{transform:translateY(7.2em)}95%{transform:translateY(8.3em)}99%{transform:translateY(8.8em)}}@keyframes drop4{100%,75%,90%,97%{transform:translateY(13.27em)}80%{transform:translateY(10.6em)}95%{transform:translateY(12em)}99%{transform:translateY(12.7em)}}@keyframes drop5{100%,75%,90%,97%{transform:translateY(17.27em)}80%{transform:translateY(14em)}95%{transform:translateY(15.7em)}99%{transform:translateY(16.5em)}}@keyframes drop6{100%,75%,90%,97%{transform:translateY(21.27em)}80%{transform:translateY(17.4em)}95%{transform:translateY(19.4em)}99%{transform:translateY(20.4em)}}
     ```
 
-    For convenience, you can also find this content in the [0-start/Shared/Board.razor.css](0-start/Shared/Board.razor.css) file in this repository.
+    For convenience, you can also find this content in the [0-start/ConnectFour/Components/Board.razor.css](0-start/ConnectFour/Components/Board.razor.css) file in this repository.
 
     Blazor components and pages have a feature called CSS isolation that allows you to create style rules that will only be applied to the contents of that component or page.  By creating a file with the same name as our component and adding the `.css` filename extension, Blazor will recognize this as the styles that should **ONLY** be applied to HTML content in the `Board` component.
 
@@ -206,9 +206,9 @@ The browser should update for you (if not, you can manually refresh the browser 
 
 The game logic for Connect Four is not too difficult to program.  We need some code that will manage the state of the game and identify 4 consecutive game pieces played next to each other and announce the winner.  To help keep this tutorial on-topic with teaching about Blazor, we are providing a class called `GameState.cs` that contains the logic for managing the game.
 
-The [GameState.cs file is in this repository](1-complete/ConnectFour/Shared/GameState.cs) and you will copy it into your version of the game.
+The [GameState.cs file is in this repository](1-complete/ConnectFour/GameState.cs) and you will copy it into your version of the game.
 
-1. Copy the [GameState.cs file](1-complete/ConnectFour/Shared/GameState.cs) from this repository into the root of your project.
+1. Copy the [GameState.cs file](1-complete/ConnectFour/GameState.cs) from this repository into the root of your project.
 
 We need to make an instance of the `GameState` available to any component that requests it, and only one instance of `GameState` should be available in our app at a time.  We'll address this need by registering our `GameState` as a singleton service in the app.
 
@@ -275,7 +275,7 @@ Next, let's allocate the possible 42 game pieces that could be played. We can re
         }
     </div>
     @code {
-        private string[] Pieces = new string[42];
+        private string[] pieces = new string[42];
     
         protected override void OnInitialized()
         {
